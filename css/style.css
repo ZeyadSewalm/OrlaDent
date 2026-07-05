@@ -810,6 +810,71 @@ section{ position:relative; }
 .marquee span::after{ content:'✦'; color: var(--gold-light); font-size:.8rem; }
 
 /* ==========================================================================
+   Interactive 3D case viewer (Three.js + STLLoader, home page)
+   ========================================================================== */
+
+.viewer-shell{
+  position:relative;
+  height: clamp(380px, 58vw, 620px);
+  border-radius: 8px;
+  overflow:hidden;
+  border: 1px solid var(--line);
+  background: radial-gradient(ellipse at 50% 15%, rgba(195,160,25,.1), transparent 60%), var(--charcoal);
+}
+.stl-viewer{ position:absolute; inset:0; }
+.stl-viewer canvas{ display:block; width:100% !important; height:100% !important; cursor:grab; touch-action:none; }
+.stl-viewer canvas:active{ cursor:grabbing; }
+
+.viewer-loading{
+  position:absolute; inset:0; z-index:5;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.1rem;
+  color: rgba(237,235,234,.55); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+  background: var(--charcoal);
+  transition: opacity .6s ease, visibility .6s;
+}
+.viewer-loading.is-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
+.viewer-spinner{
+  width:34px; height:34px; border-radius:50%;
+  border: 2px solid rgba(195,160,25,.18); border-top-color: var(--gold-light);
+  animation: viewer-spin .9s linear infinite;
+}
+@keyframes viewer-spin{ to{ transform: rotate(360deg); } }
+
+.viewer-controls{
+  position:absolute; top:1.1rem; right:1.1rem; z-index:4;
+  display:flex; gap:.6rem; flex-wrap:wrap; justify-content:flex-end;
+}
+.viewer-btn{
+  padding:.62em 1.1em; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+  border:1px solid rgba(237,235,234,.22); border-radius:30px;
+  color: rgba(237,235,234,.75); background: rgba(10,9,8,.55); backdrop-filter: blur(8px);
+  transition: all .3s ease;
+}
+.viewer-btn:hover{ border-color: var(--gold-light); color:var(--gold-light); }
+.viewer-btn[aria-pressed="true"]{ background: var(--grad-gold); color:#17150f; border-color:transparent; }
+
+.viewer-hint{
+  position:absolute; left:1.1rem; bottom:1.1rem; z-index:4;
+  display:flex; gap:.55em; align-items:center; flex-wrap:wrap;
+  font-size:.66rem; letter-spacing:.12em; text-transform:uppercase;
+  color: rgba(237,235,234,.42);
+}
+.viewer-hint span:nth-child(even){ color: rgba(237,235,234,.22); }
+
+.viewer-badge{
+  position:absolute; left:1.1rem; top:1.1rem; z-index:4;
+  display:flex; align-items:center; gap:.55em;
+  font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
+  color: var(--gold-light);
+}
+.viewer-badge .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px 2px var(--gold); }
+
+@media (max-width: 640px){
+  .viewer-controls{ top:auto; bottom:1.1rem; right:1.1rem; }
+  .viewer-hint{ display:none; }
+}
+
+/* ==========================================================================
    Page loader
    ========================================================================== */
 

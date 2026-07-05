@@ -74,6 +74,31 @@
   <div class="hero-scroll"><span>Scroll</span><span class="track"></span></div>
 </section>
 
+<!-- LIVE 3D CASE VIEWER -->
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <div class="eyebrow">Live From The Design Floor</div>
+      <h2>A real case file, in your hands.</h2>
+      <p class="lede" style="margin:1.4rem auto 0;">This is an actual wax-up CAD scan, straight off our design floor — drag to rotate, scroll to zoom, and judge the precision yourself.</p>
+    </div>
+    <div class="viewer-shell" data-reveal>
+      <div class="viewer-badge"><span class="dot"></span> Live Case File</div>
+      <div id="stl-viewer" class="stl-viewer"></div>
+      <div class="viewer-loading" id="stl-loading">
+        <div class="viewer-spinner"></div>
+        <span>Loading case file…</span>
+      </div>
+      <div class="viewer-controls">
+        <button class="viewer-btn" id="stl-autorotate" aria-pressed="true">Auto-Rotate</button>
+        <button class="viewer-btn" id="stl-wireframe" aria-pressed="false">Wireframe</button>
+        <button class="viewer-btn" id="stl-reset">Reset View</button>
+      </div>
+      <div class="viewer-hint"><span>Drag to Rotate</span><span>·</span><span>Scroll to Zoom</span><span>·</span><span>Wax-Up CAD, Exocad</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- INTRO -->
 <section class="section">
   <div class="container">
@@ -358,8 +383,12 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+<script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="js/projects-data.js"></script>
 <script src="js/featured.js"></script>
+<script src="js/viewer.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
