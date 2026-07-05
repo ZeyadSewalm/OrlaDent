@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — OrlaDent Case Portfolio</title>
+<meta name="description" content="Browse OrlaDent's digital dental CAD/CAM case portfolio — crowns, bridges, implants, full-arch, dentures, surgical guides and appliances.">
+<link rel="icon" type="image/svg+xml" href="assets/orladent-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="loader"><img class="loader-mark" src="assets/orladent-icon.svg" alt="Loading OrlaDent"></div>
+
+<header class="nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="assets/orladent-icon.svg" alt="OrlaDent" class="icon">
+      <span class="wordmark">Orladent<small>Exactness, Earned</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-ghost btn-sm">Free First Case</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-media">
+    <video autoplay muted loop playsinline poster="assets/images/home-hero-poster.jpg">
+      <source src="assets/video/home-hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-kicker"><span class="dot"></span> Digital Dental CAD/CAM Design House</div>
+    <h1>
+      <span class="line"><span>Precision, milled</span></span>
+      <span class="line"><span>into <em class="text-gold" style="font-style:normal;">every</em> margin.</span></span>
+    </h1>
+    <p class="hero-sub">OrlaDent is the design partner that treats speed as a craft — flawless crown, bridge, implant and full-arch design delivered in hours, not days, through a direct relationship with the people doing the work.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-gold">Start a Free First Case <span class="btn-arrow">→</span></a>
+      <a href="projects.html" class="btn btn-ghost">View Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b><span data-count="30">0</span>–45<small style="font-size:.9rem;"> min</small></b><span>Express Single Crown</span></div>
+      <div class="stat"><b><span data-count="12">0</span>+</b><span>Case Types Supported</span></div>
+      <div class="stat"><b>1</b><span>Named Designer, Not a Queue</span></div>
+      <div class="stat"><b>US</b><span>Based, Launching 2025</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><span class="track"></span></div>
+</section>
+
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <div class="mm-foot">bsaad1213@gmail.com &nbsp;·&nbsp; Est. 2025</div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">Home <span>/</span> Projects</div>
+    <div class="eyebrow">Case Portfolio</div>
+    <h1 style="max-width:18ch;">Real cases. Real files. Real precision.</h1>
+    <p class="lede" style="margin-top:1.4rem;"><span id="portfolio-count">47</span> design files from the OrlaDent floor — captured straight from the design software, unedited, organized by case type.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="filters" data-reveal>
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="crowns">Crowns &amp; Inlays</button>
+      <button class="filter-btn" data-filter="bridges">Bridges</button>
+      <button class="filter-btn" data-filter="esthetic">Esthetic Design</button>
+      <button class="filter-btn" data-filter="fullarch">Full Arch &amp; Implant</button>
+      <button class="filter-btn" data-filter="surgical">Surgical Guides</button>
+      <button class="filter-btn" data-filter="appliances">Appliances</button>
+    </div>
+
+    <div id="portfolio-sliders">
+      <!-- one Swiper carousel per category, rendered via js/portfolio.js -->
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--charcoal);">
+  <div class="container">
+    <div class="cta-band" data-reveal>
+      <div class="eyebrow" style="justify-content:center;">Like What You See?</div>
+      <h2>Your case could be the next file in this gallery.</h2>
+      <p class="lede">First case is free — no contract required.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-gold">Start a Free First Case <span class="btn-arrow">→</span></a>
+        <a href="services.html" class="btn btn-ghost">Explore Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="assets/orladent-icon.svg" class="icon" alt="OrlaDent"><span class="wordmark">Orladent</span></a>
+        <p>A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#crown">Crown Design</a></li>
+          <li><a href="services.html#bridge">Bridge Design</a></li>
+          <li><a href="services.html#implant">Implant Design</a></li>
+          <li><a href="services.html#fullarch">Full Arch Design</a></li>
+          <li><a href="services.html#express">Express Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@orladent.com">hello@orladent.com</a></li>
+          <li><a href="contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="divider">
+    <div class="footer-bottom">
+      <span>© 2026 OrlaDent. All rights reserved.</span>
+      <span>Exactness, Earned.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox">
+  <button class="lightbox-close" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lightbox-prev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <figure>
+    <img src="" alt="">
+    <figcaption><b class="lb-title"></b><span class="lb-cat"></span></figcaption>
+  </figure>
+  <button class="lightbox-next" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/projects-data.js"></script>
+<script src="js/portfolio.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
