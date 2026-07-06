@@ -51,7 +51,7 @@ window.PROJECTS = [
     "group": "bridges",
     "file": "assets/images/projects/bridge/bridge-006.jpg",
     "orig": "4 ant.jpeg",
-    "title": "3-Unit Anterior Bridge"
+    "title": "4-Unit Anterior Bridge"
   },
   {
     "id": 7,

@@ -157,6 +157,17 @@ section{ position:relative; }
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
+.viewer-divider-wrap{ padding: clamp(20px,4.5vw,44px) 0; }
+.viewer-divider{
+  position:relative; height:1px; max-width:1180px; margin:0 auto;
+  background: linear-gradient(90deg, transparent, rgba(195,160,25,.4) 50%, transparent);
+}
+.viewer-divider::after{
+  content:''; position:absolute; left:50%; top:50%; width:6px; height:6px; border-radius:50%;
+  background: var(--gold-light); box-shadow:0 0 12px 2px rgba(195,160,25,.55);
+  transform: translate(-50%,-50%);
+}
+
 .divider{
   height:1px;
   background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
@@ -195,10 +206,15 @@ section{ position:relative; }
 .btn-ghost{
   border-color: rgba(237,235,234,.28);
   color: var(--cream);
-  background: rgba(237,235,234,.02);
+  
   backdrop-filter: blur(6px);
 }
 .btn-ghost:hover{ border-color: var(--gold-light); color: var(--gold-light); transform: translateY(-2px); }
+/* Touch devices have no persistent :hover — show the accented state by default
+   so buttons like "Free First Case" don't read as flat/plain on mobile. */
+@media (hover: none){
+  .btn-ghost{ border-color: var(--gold-light); color: var(--gold-light); }
+}
 
 .btn-arrow{ transition: transform .45s var(--ease); }
 .btn:hover .btn-arrow{ transform: translateX(4px); }
@@ -357,16 +373,17 @@ section{ position:relative; }
 
 .hero-stats{
   position:relative; z-index:2;
-  display:flex; gap: clamp(24px,5vw,72px);
+  display:flex; align-items:baseline; gap: clamp(32px,6.5vw,92px);
   margin-top: clamp(40px,6vw,64px);
   padding-top: clamp(28px,4vw,40px);
   border-top: 1px solid rgba(237,235,234,.14);
 }
 .hero-stats .stat b{
-  display:block; font-family:var(--font-serif); font-size: clamp(1.6rem,3vw,2.4rem);
-  color: var(--cream);
+  display:block; font-family:var(--font-serif); font-weight:600; font-size: clamp(2.3rem,4.4vw,3.6rem);
+  color: var(--cream); line-height:1.05; letter-spacing:.01em;
 }
-.hero-stats .stat span{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(237,235,234,.5); }
+.hero-stats .stat > span{ display:block; margin-top:.6em; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(237,235,234,.58); }
+.hero-stats .stat b .stat-accent{ color: var(--gold-light); }
 
 /* ==========================================================================
    Cards — pillars / services / values
@@ -778,10 +795,16 @@ section{ position:relative; }
 .social-row a{
   width:44px; height:44px; border-radius:50%;
   border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
-  transition: all .35s ease;
+  transition: border-color .35s ease, background .35s ease, box-shadow .35s ease, transform .35s ease;
 }
-.social-row a:hover{ border-color:var(--gold-light); background: rgba(195,160,25,.1); transform:translateY(-3px); }
-.social-row svg{ width:17px; height:17px; stroke:var(--cream); fill:none; }
+.social-row a:hover{ transform:translateY(-3px); }
+.social-row svg{ width:19px; height:19px; display:block; transition: transform .45s cubic-bezier(.22,.9,.3,1.3); }
+.social-row a:hover svg{ transform: scale(1.22); }
+
+/* Official brand-color glow per icon on hover — button size/position unchanged */
+.social-row a.ic-linkedin:hover{ border-color:#0A66C2; background:rgba(10,102,194,.14); box-shadow:0 0 22px 3px rgba(10,102,194,.5); }
+.social-row a.ic-instagram:hover{ border-color:#dc2743; background:rgba(220,39,67,.14); box-shadow:0 0 22px 3px rgba(220,39,67,.5); }
+.social-row a.ic-x:hover{ border-color:rgba(237,235,234,.65); background:rgba(237,235,234,.1); box-shadow:0 0 22px 3px rgba(237,235,234,.4); }
 
 /* ==========================================================================
    Footer
@@ -869,9 +892,28 @@ section{ position:relative; }
 }
 .viewer-badge .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px 2px var(--gold); }
 
+/* Model switcher — only rendered (by JS) when more than one case file is
+   configured, so it stays invisible and out of the way until there's
+   actually something to switch between. */
+.viewer-switcher{
+  position:absolute; left:50%; bottom:1.1rem; z-index:4;
+  transform: translateX(-50%);
+  display:flex; gap:.5em; flex-wrap:wrap; justify-content:center;
+  max-width: calc(100% - 2.2rem);
+}
+.viewer-switcher:empty{ display:none; }
+.viewer-switcher button{
+  padding:.5em .95em; font-size:.64rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+  border:1px solid rgba(237,235,234,.2); border-radius:30px; color: rgba(237,235,234,.6);
+  background: rgba(10,9,8,.5); backdrop-filter: blur(8px); transition: all .3s ease;
+}
+.viewer-switcher button:hover{ border-color: var(--gold-light); color: var(--gold-light); }
+.viewer-switcher button.is-active{ background: var(--grad-gold); color:#17150f; border-color:transparent; }
+
 @media (max-width: 640px){
   .viewer-controls{ top:auto; bottom:1.1rem; right:1.1rem; }
   .viewer-hint{ display:none; }
+  .viewer-switcher{ bottom:.8rem; }
 }
 
 /* ==========================================================================
@@ -902,9 +944,94 @@ section{ position:relative; }
   background: radial-gradient(ellipse, rgba(195,160,25,.14), transparent 65%);
   z-index:0;
 }
+/* Optional video layer — page-hero works with or without one. When present
+   it sits behind the text with a dark gradient for readability, so the page
+   header reads as "text over video", not a separate video section. */
+.page-hero-media{ position:absolute; inset:0; z-index:0; }
+.page-hero-media video{
+  width:100%; height:100%; object-fit:cover;
+  position:absolute; inset:0;
+}
+.page-hero-media::after{
+  content:''; position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,9,8,.6) 0%, rgba(10,9,8,.45) 45%, var(--rich-black) 100%),
+    linear-gradient(90deg, rgba(10,9,8,.5) 0%, transparent 40%, transparent 60%, rgba(10,9,8,.5) 100%);
+}
 .page-hero .container{ position:relative; z-index:1; }
 .page-hero .breadcrumb{ font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color: rgba(237,235,234,.45); margin-bottom:1.4rem; }
 .page-hero .breadcrumb span{ color: var(--gold-light); }
+
+/* ==========================================================================
+   Interactive Services Book
+   ========================================================================== */
+.book-shell{ max-width: 900px; margin: 0 auto; }
+.book{
+  position:relative;
+  height: clamp(540px, 62vw, 660px);
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(150deg, #241a10, #120d07);
+  box-shadow: 0 60px 110px -35px rgba(0,0,0,.7), 0 0 0 1px rgba(195,160,25,.16);
+  perspective: 1800px;
+}
+.book-page{
+  position:absolute; inset:0;
+  opacity:0; visibility:hidden;
+  transition: transform .65s cubic-bezier(.3,.05,.15,1), opacity .5s ease;
+}
+.book-page.is-active{ opacity:1; visibility:visible; z-index:3; }
+.page-inner{
+  position:absolute; inset: 14px;
+  border-radius:6px;
+  padding: clamp(28px,3.6vw,46px);
+  overflow-y:auto;
+  background:
+    radial-gradient(ellipse at 25% 0%, rgba(231,193,124,.06), transparent 60%),
+    linear-gradient(165deg, #2b2015 0%, #1c150d 100%);
+  border: 1px solid rgba(195,160,25,.25);
+}
+.page-corner{ position:absolute; width:30px; height:30px; border: 2px solid rgba(231,193,124,.35); pointer-events:none; }
+.page-corner.tl{ top:10px; left:10px; border-right:0; border-bottom:0; }
+.page-corner.tr{ top:10px; right:10px; border-left:0; border-bottom:0; }
+.page-corner.bl{ bottom:10px; left:10px; border-right:0; border-top:0; }
+.page-corner.br{ bottom:10px; right:10px; border-left:0; border-top:0; }
+.page-number{ position:absolute; right:1.6rem; bottom:1.2rem; font-size:.68rem; letter-spacing:.1em; color:rgba(237,235,234,.35); }
+
+/* Reuse .service-card's internal tag/meta/benefits/workflow styling for
+   book-page content, but the page itself is a parchment panel, not a glass
+   card, and shouldn't lift on hover like a grid card would. */
+.book-page .service-card{ padding:0; min-height:0; }
+.book-page .service-card:hover{ transform:none; border-color:transparent; }
+
+.book-cover{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  background: linear-gradient(160deg,#1c150c,#0d0a06);
+}
+.hand-logo{
+  width: clamp(96px,13vw,132px);
+  filter: url(#sketch-filter) sepia(1) saturate(0) contrast(1.35) brightness(1.18);
+  opacity:.9;
+}
+.cover-title{ font-size: clamp(1.9rem,3.2vw,2.5rem); color:var(--cream); margin-top:1.5rem; }
+.cover-sub{ display:block; margin-top:.7rem; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold-light); }
+
+.book-controls{ display:flex; align-items:center; justify-content:center; gap:1.6rem; margin-top:1.8rem; }
+.book-nav{
+  width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(237,235,234,.28); color:var(--cream); background:rgba(237,235,234,.02);
+  transition: border-color .35s ease, color .35s ease, background .35s ease, transform .35s ease;
+}
+.book-nav svg{ width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2; }
+.book-nav:hover{ border-color:var(--gold-light); color:var(--gold-light); background:rgba(195,160,25,.1); }
+.book-nav:active{ transform:scale(.92); }
+.book-nav:disabled{ opacity:.3; pointer-events:none; }
+.book-indicator{ font-family:var(--font-serif); font-size:.9rem; letter-spacing:.06em; color:rgba(237,235,234,.6); min-width:56px; text-align:center; }
+
+@media (max-width:600px){
+  .page-corner{ width:20px; height:20px; }
+  .book-controls{ gap:1.1rem; }
+}
 
 /* ==========================================================================
    Responsive
@@ -927,6 +1054,11 @@ section{ position:relative; }
   .masonry{ columns: 2 200px; }
   .form-row{ grid-template-columns: 1fr; }
   .section-head.split{ flex-direction:column; align-items:flex-start; }
+  .brand .icon{ width:84px; }
+}
+
+@media (max-width: 600px){
+  .brand .icon{ width:64px; }
 }
 
 @media (max-width: 600px){

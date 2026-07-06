@@ -107,30 +107,40 @@
   /* ---------------- Category filter ---------------- */
   var filterBtns = document.querySelectorAll(".filter-btn");
   var sliderSections = document.querySelectorAll(".category-slider");
-  filterBtns.forEach(function(btn){
-    btn.addEventListener("click", function(){
-      filterBtns.forEach(function(b){ b.classList.remove("active"); });
-      btn.classList.add("active");
-      var f = btn.getAttribute("data-filter");
-      sliderSections.forEach(function(section){
-        var group = section.getAttribute("data-group");
-        var match = (f === "all" || group === f);
-        section.classList.toggle("is-hidden", !match);
+  function applyFilter(f){
+    filterBtns.forEach(function(b){ b.classList.toggle("active", b.getAttribute("data-filter") === f); });
+    sliderSections.forEach(function(section){
+      var group = section.getAttribute("data-group");
+      var match = (f === "all" || group === f);
+      section.classList.toggle("is-hidden", !match);
 
-        var instance = swipers[group];
-        if(!instance) return;
-        if(match){
-          /* becoming visible: force a fresh measurement, then resume */
-          instance.update();
-          if(instance.autoplay) instance.autoplay.start();
-        } else {
-          /* going hidden: stop autoplay so it isn't animating an invisible,
-             zero-size track */
-          if(instance.autoplay) instance.autoplay.stop();
-        }
-      });
+      var instance = swipers[group];
+      if(!instance) return;
+      if(match){
+        /* becoming visible: force a fresh measurement, then resume */
+        instance.update();
+        if(instance.autoplay) instance.autoplay.start();
+      } else {
+        /* going hidden: stop autoplay so it isn't animating an invisible,
+           zero-size track */
+        if(instance.autoplay) instance.autoplay.stop();
+      }
     });
+  }
+  filterBtns.forEach(function(btn){
+    btn.addEventListener("click", function(){ applyFilter(btn.getAttribute("data-filter")); });
   });
+
+  /* Deep-link support: services.html links to projects.html?cat=esthetic
+     (etc.) so a visitor arriving from a service page lands pre-filtered
+     to just that category instead of the full "All Work" view. */
+  var params = new URLSearchParams(window.location.search);
+  var catParam = params.get("cat");
+  if(catParam && document.querySelector('.filter-btn[data-filter="' + catParam + '"]')){
+    applyFilter(catParam);
+    var section = document.getElementById("portfolio-sliders");
+    if(section){ window.addEventListener("load", function(){ section.scrollIntoView({ behavior:"smooth", block:"start" }); }); }
+  }
 
   /* ---------------- Lightbox (data-driven, ignores Swiper's DOM clones) ---------------- */
   var lightbox = document.querySelector(".lightbox");
