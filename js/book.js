@@ -16,13 +16,22 @@
   var animating = false;
   var DURATION = 650;
 
-  function labelFor(i){ return i === 0 ? "Cover" : (i + " / " + (total - 1)); }
+  function labelFor(i){
+    if(i !== 0) return i + " / " + (total - 1);
+    return window.OD_I18N ? window.OD_I18N.t("services.book.cover") : "Cover";
+  }
 
   function updateControls(){
     if(indicator) indicator.textContent = labelFor(current);
     if(prevBtn) prevBtn.disabled = current === 0;
     if(nextBtn) nextBtn.disabled = current === total - 1;
   }
+
+  /* Keep the "Cover" label translated if the visitor switches language
+     while sitting on the cover page. */
+  document.addEventListener("i18n:change", function(){
+    if(current === 0) updateControls();
+  });
 
   function setInstant(index){
     pages.forEach(function(p, i){

@@ -12,7 +12,8 @@
     { key:"esthetic",   label:"Esthetic Design" },
     { key:"fullarch",   label:"Full Arch & Implant" },
     { key:"surgical",   label:"Surgical Guides" },
-    { key:"appliances", label:"Appliances" }
+    { key:"appliances", label:"Appliances" },
+    { key:"ibar",       label:"I-Bar 13" }
   ];
 
   var countEl = document.getElementById("portfolio-count");

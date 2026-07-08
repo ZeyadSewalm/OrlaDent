@@ -20,28 +20,31 @@
   <div class="container">
     <a href="index.html" class="brand">
       <img src="assets/orladent-icon.svg" alt="OrlaDent" class="icon">
-      <span class="wordmark">Orladent<small>Exactness, Earned</small></span>
+      <span class="wordmark">Orladent<small data-i18n="brand.tagline">Exactness, Earned</small></span>
     </a>
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;">Free First Case</a>
+      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;" data-i18n="nav.uploadStl"> Upload STL</a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
+        <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">|</span><span class="lang-opt" data-lang="ar">AR</span>
+      </button>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="services.html" data-i18n="nav.services">Services</a>
+  <a href="projects.html" data-i18n="nav.projects">Projects</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="contact.html" data-i18n="nav.contact">Contact</a>
   <!-- <div class="mm-foot">bsaad1213@gmail.com &nbsp;·&nbsp; Est. 2025</div> -->
 </div>
 
@@ -53,10 +56,10 @@
     </video>
   </div>
   <div class="container">
-    <div class="breadcrumb">Home <span>/</span> About Us</div>
-    <div class="eyebrow">Our Story</div>
-    <h1 style="max-width:16ch;">Built on discipline, not on hustle.</h1>
-    <p class="lede" style="margin-top:1.4rem;">OrlaDent exists because the industry kept asking labs and clinics to choose between speed and standards. We built a design house that refuses the trade.</p>
+    <div class="breadcrumb"><span data-i18n="nav.home">Home</span> <span>/</span> <span data-i18n="footer.aboutUs">About Us</span></div>
+    <div class="eyebrow" data-i18n="about.hero.eyebrow">Our Story</div>
+    <h1 style="max-width:16ch;" data-i18n="about.hero.title">Built on discipline, not on hustle.</h1>
+    <p class="lede" style="margin-top:1.4rem;" data-i18n="about.hero.lede">OrlaDent exists because the industry kept asking labs and clinics to choose between speed and standards. We built a design house that refuses the trade.</p>
   </div>
 </section>
 
@@ -65,10 +68,10 @@
   <div class="container">
     <div class="grid grid-2" style="align-items:center; gap:64px;">
       <div data-reveal>
-        <div class="eyebrow">Company Story</div>
-        <h2>The relentless search for "exact."</h2>
-        <p>The CAD/CAM outsourcing market split into two broken extremes: ticket-queue platforms, and freelance marketplaces with no consistent quality. We built the opposite — a named designer, scoped turnaround, and "premium" proven on your first case, free.</p>
-        <p>Our crest is a quiet nod to that standard: sovereignty earned through discipline, not declared by title. It's why our line is <em class="text-gold" style="font-style:normal;">Exactness, Earned</em>.</p>
+        <div class="eyebrow" data-i18n="about.story.eyebrow">Company Story</div>
+        <h2 data-i18n="about.story.title">The relentless search for "exact."</h2>
+        <p data-i18n="about.story.p1">The CAD/CAM outsourcing market split into two broken extremes: ticket-queue platforms, and freelance marketplaces with no consistent quality. We built the opposite — a named designer, scoped turnaround, and "premium" proven on your case.</p>
+        <p data-i18n-html="about.story.p2">Our crest is a quiet nod to that standard: sovereignty earned through discipline, not declared by title. It's why our line is <em class="text-gold" style="font-style:normal;">Exactness, Earned</em>.</p>
       </div>
       <div class="glass" style="padding:3px; border-radius:6px;" data-reveal>
         <img src="assets/images/about-story-poster.jpg" alt="OrlaDent digital design detail" style="border-radius:4px; width:100%;">
@@ -83,18 +86,18 @@
     <div class="grid grid-3" data-reveal-group>
       <div class="pillar-card glass" data-reveal>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
-        <h3>Brand Philosophy</h3>
-        <p>Speed is evidence of mastery, not a discount signal — fast, precise and premium, together.</p>
+        <h3 data-i18n="about.philosophy.title">Brand Philosophy</h3>
+        <p data-i18n="about.philosophy.body">Speed is evidence of mastery, not a discount signal — fast, precise and premium, together.</p>
       </div>
       <div class="pillar-card glass" data-reveal>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M3 12l6 6L21 6"/></svg></div>
-        <h3>Mission</h3>
-        <p>Overflow capacity, boutique margins, chairside speed — without gambling on quality.</p>
+        <h3 data-i18n="about.mission.title">Mission</h3>
+        <p data-i18n="about.mission.body">Overflow capacity, boutique margins, chairside speed — without gambling on quality.</p>
       </div>
       <div class="pillar-card glass" data-reveal>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>Vision</h3>
-        <p>The one design partner labs call before ever splitting a case again.</p>
+        <h3 data-i18n="about.vision.title">Vision</h3>
+        <p data-i18n="about.vision.body">The one design partner labs call before ever splitting a case again.</p>
       </div>
     </div>
   </div>
@@ -104,25 +107,25 @@
 <section class="section">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">Core Values</div>
-      <h2>Three Laws, one standard.</h2>
-      <p class="lede" style="margin:1.4rem auto 0;">Internally, we call these the Three Laws — the mythology behind the mark. Externally, they're just how every case is measured.</p>
+      <div class="eyebrow" data-i18n="about.values.eyebrow">Core Values</div>
+      <h2 data-i18n="about.values.title">Three Laws, one standard.</h2>
+      <p class="lede" style="margin:1.4rem auto 0;" data-i18n="about.values.lede">Internally, we call these the Three Laws — the mythology behind the mark. Externally, they're just how every case is measured.</p>
     </div>
     <div class="grid grid-3" data-reveal-group>
       <div class="pillar-card glass" data-reveal>
-        <span class="law">Law I · Exactness</span>
-        <h3>Precision Under Pressure</h3>
-        <p>Flawless margins and perfect occlusion on every design — the proof that makes our speed credible instead of suspicious.</p>
+        <span class="law" data-i18n="about.values.law1.tag">Law I · Exactness</span>
+        <h3 data-i18n="about.values.law1.title">Precision Under Pressure</h3>
+        <p data-i18n="about.values.law1.body">Flawless margins and perfect occlusion on every design — the proof that makes our speed credible instead of suspicious.</p>
       </div>
       <div class="pillar-card glass" data-reveal>
-        <span class="law">Law II · The Royal Court</span>
-        <h3>The Human Line</h3>
-        <p>A direct, human relationship with every partner — never a faceless messenger, marketplace, or ticket queue.</p>
+        <span class="law" data-i18n="about.values.law2.tag">Law II · The Royal Court</span>
+        <h3 data-i18n="about.values.law2.title">The Human Line</h3>
+        <p data-i18n="about.values.law2.body">A direct, human relationship with every partner — never a faceless messenger, marketplace, or ticket queue.</p>
       </div>
       <div class="pillar-card glass" data-reveal>
-        <span class="law">Law III · The Vault</span>
-        <h3>Earned Gold</h3>
-        <p>Premium demonstrated case by case against real, published turnaround data — never a blanket promise.</p>
+        <span class="law" data-i18n="about.values.law3.tag">Law III · The Vault</span>
+        <h3 data-i18n="about.values.law3.title">Earned Gold</h3>
+        <p data-i18n="about.values.law3.body">Premium demonstrated case by case against real, published turnaround data — never a blanket promise.</p>
       </div>
     </div>
   </div>
@@ -133,9 +136,9 @@
   <div class="container">
     <div class="grid grid-2" style="gap:64px;">
       <div data-reveal>
-        <div class="eyebrow">Brand Personality</div>
-        <h2>Confident. Precise. Low-hype.</h2>
-        <p class="lede">No hustle language, no urgency theater. Speed is discipline, not a rush — gold used as an earned accent, never gaudy.</p>
+        <div class="eyebrow" data-i18n="about.personality.eyebrow">Brand Personality</div>
+        <h2 data-i18n="about.personality.title">Confident. Precise. Low-hype.</h2>
+        <p class="lede" data-i18n="about.personality.lede">No hustle language, no urgency theater. Speed is discipline, not a rush — gold used as an earned accent, never gaudy.</p>
         <div class="marquee-wrap" style="border-color:var(--line); margin-top:2rem;">
           <div class="marquee">
             <span>Confident</span><span>Precise</span><span>Disciplined</span><span>Understated</span><span>Exact</span>
@@ -143,10 +146,10 @@
         </div>
       </div>
       <div data-reveal>
-        <div class="eyebrow">Human Expertise vs. Automation</div>
-        <h2>A named designer, not a model.</h2>
-        <p class="lede">Where platforms lead with algorithms, we lead with a person you can call. Automation supports the workflow — it never replaces the relationship.</p>
-        <a href="services.html" class="btn btn-ghost" style="margin-top:1.4rem;">See How We Work <span class="btn-arrow">→</span></a>
+        <div class="eyebrow" data-i18n="about.automation.eyebrow">Human Expertise vs. Automation</div>
+        <h2 data-i18n="about.automation.title">A named designer, not a model.</h2>
+        <p class="lede" data-i18n="about.automation.lede">Where platforms lead with algorithms, we lead with a person you can call. Automation supports the workflow — it never replaces the relationship.</p>
+        <a href="services.html" class="btn btn-ghost" style="margin-top:1.4rem;" data-i18n="about.automation.cta">See How We Work <span class="btn-arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -158,8 +161,8 @@
 <section class="section" style="background:var(--black);">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">Watch</div>
-      <h2>Inside the standard.</h2>
+      <div class="eyebrow" data-i18n="about.video.eyebrow">Watch</div>
+      <h2 data-i18n="about.video.title">Inside the standard.</h2>
     </div>
     <div class="glass" style="padding:6px; border-radius:8px; max-width:1000px; margin:0 auto;" data-reveal>
       <video controls preload="metadata" poster="assets/images/about-story-poster.jpg" style="width:100%; border-radius:6px; display:block;">
@@ -173,12 +176,12 @@
 <section class="section">
   <div class="container">
     <div class="cta-band" data-reveal>
-      <div class="eyebrow" style="justify-content:center;">Join Us</div>
-      <h2>See the standard on your own case.</h2>
-      <p class="lede">First case is free. Everything after that is earned.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="about.cta.eyebrow">Join Us</div>
+      <h2 data-i18n="about.cta.title">See the standard on your own case.</h2>
+      <p class="lede" data-i18n="about.cta.lede">Upload STL. Everything after that is earned.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold">Start a Free First Case <span class="btn-arrow">→</span></a>
-        <a href="projects.html" class="btn btn-ghost">View Our Work</a>
+        <a href="contact.html" class="btn btn-gold"><span data-i18n="nav.uploadStl">Upload STL</span> <span class="btn-arrow">→</span></a>
+        <a href="projects.html" class="btn btn-ghost" data-i18n="home.hero.viewWork">View Our Work</a>
       </div>
     </div>
   </div>
@@ -189,20 +192,20 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="brand"><img src="assets/orladent-icon.svg" class="icon" alt="OrlaDent"><span class="wordmark">Orladent</span></a>
-        <p>A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
+        <p data-i18n="footer.tagline">A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
       </div>
       <div class="footer-col">
-        <h4>Sitemap</h4>
+        <h4 data-i18n="footer.sitemap">Sitemap</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" data-i18n="footer.aboutUs">About Us</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="nav.services">Services</h4>
         <ul>
           <li><a href="services.html#crown">Crown Design</a></li>
           <li><a href="services.html#bridge">Bridge Design</a></li>
@@ -212,23 +215,24 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="nav.contact">Contact</h4>
         <ul>
           <li><a href="mailto:orladentagency@gmail.com">orladentagency@gmail.com</a></li>
-          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="contact.html" data-i18n="footer.getInTouch">Get in Touch</a></li>
         </ul>
       </div>
     </div>
     <hr class="divider">
     <div class="footer-bottom">
-      <span>© 2026 OrlaDent. All rights reserved.</span>
-      <span>Exactness, Earned.</span>
+      <span>© 2026 OrlaDent. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="brand.tagline">Exactness, Earned.</span>
     </div>
   </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

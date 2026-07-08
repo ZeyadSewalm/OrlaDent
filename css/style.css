@@ -270,6 +270,26 @@ section{ position:relative; }
 
 .nav-cta{ display:flex; align-items:center; gap:1.6rem; }
 
+.lang-toggle{
+  display:flex; align-items:center; gap:.4em;
+  background:none;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:.5em 1em;
+  font-family: var(--font-sans);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  color: rgba(237,235,234,.6);
+  cursor:pointer;
+  transition: border-color .35s ease, color .35s ease;
+  flex-shrink:0;
+}
+.lang-toggle:hover{ border-color: var(--gold-light); }
+.lang-toggle .lang-sep{ color: var(--line); }
+.lang-toggle .lang-opt{ transition: color .35s ease; }
+.lang-toggle .lang-opt.is-active{ color: var(--gold-light); }
+
 .nav-toggle{
   display:none;
   width:44px; height:44px;
@@ -635,9 +655,13 @@ section{ position:relative; }
 .slider-shell{ position:relative; padding: 0 clamp(4px,4vw,58px); }
 .slider-shell .swiper{ overflow:hidden; border-radius:4px; }
 .slider-shell .swiper-wrapper{ align-items:stretch; }
-.slider-shell .swiper-slide{ height:auto; }
+.slider-shell .swiper-slide{ height:auto; display:flex; }
 
-.slider-shell .proj-card{ margin:0; height:100%; display:flex; flex-direction:column; }
+/* Capped so a slide never balloons in size when a category has too few
+   images to fill the usual slidesPerView (e.g. a 2-photo category still
+   sitting on a full-width slide) — every card stays the same physical size
+   as cards in fuller categories, just centered within its slide. */
+.slider-shell .proj-card{ margin:0 auto; height:100%; max-width:320px; width:100%; display:flex; flex-direction:column; }
 .slider-shell .proj-card .slide-frame{ position:relative; width:100%; aspect-ratio: 4 / 5; overflow:hidden; }
 .slider-shell .proj-card .slide-frame img{
   width:100%; height:100%; object-fit:cover; display:block;
@@ -1032,6 +1056,67 @@ section{ position:relative; }
   .page-corner{ width:20px; height:20px; }
   .book-controls{ gap:1.1rem; }
 }
+
+/* ==========================================================================
+   RTL / Arabic Support
+   Setting dir="rtl" on <html> (done by js/i18n.js when Arabic is active)
+   already flips text direction, default text-align, and the visual order of
+   every flex row and CSS grid on the site automatically — nav, buttons,
+   footer columns, stat rows, cards, etc. all mirror on their own with zero
+   extra CSS. The rules below only handle the things the browser can't mirror
+   by itself: absolutely-positioned UI chrome (which uses literal left/right
+   offsets, not logical ones) and directional arrow/chevron icons.
+   ========================================================================== */
+
+html[dir="rtl"]{ direction: rtl; }
+
+/* Absolutely-positioned elements anchored with left/right offsets */
+[dir="rtl"] .nav-links a::after{ left:100%; right:0; }
+[dir="rtl"] .nav-links a:hover::after, [dir="rtl"] .nav-links a.active::after{ left:0; }
+
+[dir="rtl"] .hero-scroll{ right:auto; left: clamp(20px,5vw,64px); }
+
+[dir="rtl"] .process-step .arrow{ right:auto; left:-13px; }
+
+[dir="rtl"] .proj-card .zoom-ic{ right:auto; left:1rem; }
+
+[dir="rtl"] .slider-nav.prev{ left:auto; right:0; }
+[dir="rtl"] .slider-nav.next{ right:auto; left:0; }
+
+[dir="rtl"] .lightbox-close{ right:auto; left:32px; }
+[dir="rtl"] .lightbox-prev{ left:auto; right:32px; }
+[dir="rtl"] .lightbox-next{ right:auto; left:32px; }
+
+[dir="rtl"] .viewer-controls{ right:auto; left:1.1rem; }
+[dir="rtl"] .viewer-hint{ left:auto; right:1.1rem; }
+[dir="rtl"] .viewer-badge{ left:auto; right:1.1rem; }
+@media (max-width: 640px){
+  [dir="rtl"] .viewer-controls{ right:auto; left:1.1rem; }
+}
+
+[dir="rtl"] .page-number{ right:auto; left:1.6rem; }
+[dir="rtl"] .page-hero::before{ right:auto; left:-10%; }
+
+[dir="rtl"] .timeline{ padding-left:0; padding-right: clamp(24px,4vw,48px); }
+[dir="rtl"] .timeline::before{ left:auto; right:0; }
+[dir="rtl"] .timeline-item::before{ left:auto; right: calc(-1 * clamp(24px,4vw,48px) - 5px); }
+
+/* Mobile menu + split headers use flex-start/flex-end (physical, not
+   logical) for cross-axis alignment, so they need an explicit flip */
+[dir="rtl"] .mobile-menu{ align-items:flex-end; }
+@media (max-width: 860px){
+  [dir="rtl"] .section-head.split{ align-items:flex-end; }
+}
+
+/* Directional glyphs/icons: mirror so arrows still point the way content
+   actually flows once the layout itself has been mirrored by dir="rtl" */
+[dir="rtl"] .btn-arrow{ display:inline-block; transform: scaleX(-1); }
+[dir="rtl"] .slider-nav svg{ transform: scaleX(-1); }
+[dir="rtl"] .lightbox-prev svg, [dir="rtl"] .lightbox-next svg{ transform: scaleX(-1); }
+[dir="rtl"] .book-nav svg{ transform: scaleX(-1); }
+
+/* SLA table headers hardcode text-align:left inline; override for RTL */
+[dir="rtl"] table th{ text-align:right !important; }
 
 /* ==========================================================================
    Responsive

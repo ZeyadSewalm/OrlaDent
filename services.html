@@ -20,42 +20,45 @@
   <div class="container">
     <a href="index.html" class="brand">
       <img src="assets/orladent-icon.svg" alt="OrlaDent" class="icon">
-      <span class="wordmark">Orladent<small>Exactness, Earned</small></span>
+      <span class="wordmark">Orladent<small data-i18n="brand.tagline">Exactness, Earned</small></span>
     </a>
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;">Free First Case</a>
+      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;" data-i18n="nav.uploadStl">Upload STL</a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
+        <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">|</span><span class="lang-opt" data-lang="ar">AR</span>
+      </button>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="services.html" data-i18n="nav.services">Services</a>
+  <a href="projects.html" data-i18n="nav.projects">Projects</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="contact.html" data-i18n="nav.contact">Contact</a>
   <!-- <div class="mm-foot">bsaad1213@gmail.com &nbsp;·&nbsp; Est. 2025</div> -->
 </div>
 
 <section class="page-hero">
   <div class="page-hero-media">
     <video autoplay muted loop playsinline poster="assets/images/home-hero-poster.jpg">
-      <source src="assets/video/home-hero.mp4" type="video/mp4">
+      <source src="assets/video/about-story.mp4" type="video/mp4">
     </video>
   </div>
   <div class="container">
-    <div class="breadcrumb">Home <span>/</span> Services</div>
-    <div class="eyebrow">Full-Scope Design</div>
-    <h1 style="max-width:16ch;">Every case type. One accountable partner.</h1>
-    <p class="lede" style="margin-top:1.4rem;">Turnaround is scoped by case complexity, not promised in a single flat number — so the speed claim stays defensible, case by case.</p>
+    <div class="breadcrumb"><span data-i18n="nav.home">Home</span> <span>/</span> <span data-i18n="nav.services">Services</span></div>
+    <div class="eyebrow" data-i18n="home.servicesPreview.eyebrow">Full-Scope Design</div>
+    <h1 style="max-width:16ch;" data-i18n="services.hero.title">Every case type. One accountable partner.</h1>
+    <p class="lede" style="margin-top:1.4rem;" data-i18n="services.hero.lede">Turnaround is scoped by case complexity, not promised in a single flat number — so the speed claim stays defensible, case by case.</p>
   </div>
 </section>
 
@@ -68,9 +71,9 @@
   </svg>
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">Full-Scope Design</div>
-      <h2>Turn the page on every case type.</h2>
-      <p class="lede" style="margin:1.4rem auto 0;">Six disciplines, one open book — flip through to see how each case is designed.</p>
+      <div class="eyebrow" data-i18n="home.servicesPreview.eyebrow">Full-Scope Design</div>
+      <h2 data-i18n="services.book.title">Turn the page on every case type.</h2>
+      <p class="lede" style="margin:1.4rem auto 0;" data-i18n="services.book.lede">Six disciplines, one open book — flip through to see how each case is designed.</p>
     </div>
 
     <div class="book-shell" data-reveal>
@@ -80,8 +83,8 @@
           <div class="page-inner book-cover">
             <div class="page-corner tl"></div><div class="page-corner tr"></div><div class="page-corner bl"></div><div class="page-corner br"></div>
             <img src="assets/orladent-icon.svg" alt="" class="hand-logo">
-            <h3 class="cover-title">Our Services</h3>
-            <span class="cover-sub">Six Disciplines. One Design House.</span>
+            <h3 class="cover-title" data-i18n="services.book.coverTitle">Our Services</h3>
+            <span class="cover-sub" data-i18n="services.book.coverSub">Six Disciplines. One Design House.</span>
           </div>
         </div>
 
@@ -92,17 +95,17 @@
               <span class="tag">01 · Restorative</span>
               <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3c-4 0-6 3-6 6.5 0 4 2 6 2.5 8.5.3 1.5 1 2 1.8 0 .5-1.3.8-2 1.7-2s1.2.7 1.7 2c.8 2 1.5 1.5 1.8 0 .5-2.5 2.5-4.5 2.5-8.5C18 6 16 3 12 3z"/></svg></div>
               <h3>Crown Design</h3>
-              <p>Single-unit anatomical crowns — including inlays, onlays and veneers — designed for flawless margins and natural occlusal contact from the first proposal.</p>
+              <p data-i18n="services.crown.body">Single-unit anatomical crowns — including inlays, onlays and veneers — designed for flawless margins and natural occlusal contact from the first proposal.</p>
               <ul class="benefits">
-                <li>Full-contour or minimal-prep design, your choice of material library</li>
-                <li>Occlusion and contact points verified against our Gold Standard</li>
-                <li>Milling-ready file formats for your in-house or partner mill</li>
+                <li data-i18n="services.crown.b1">Full-contour or minimal-prep design, your choice of material library</li>
+                <li data-i18n="services.crown.b2">Occlusion and contact points verified against our Gold Standard</li>
+                <li data-i18n="services.crown.b3">Milling-ready file formats for your in-house or partner mill</li>
               </ul>
-              <div class="workflow"><span>Scan Intake</span><span>Design</span><span>QC Pass</span><span>Delivery</span></div>
+              <div class="workflow"><span data-i18n="services.wf.scanIntake">Scan Intake</span><span data-i18n="services.wf.design">Design</span><span data-i18n="services.wf.qcPass">QC Pass</span><span data-i18n="services.wf.delivery">Delivery</span></div>
               <div class="meta"><span>Express / Regular</span><b>30 min – 3 hrs</b></div>
             </div>
-            <a href="projects.html?cat=crowns" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;">View Crown Projects <span class="btn-arrow">→</span></a>
-            <span class="page-number">1 / 6</span>
+            <a href="projects.html?cat=crowns" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;"><span data-i18n="common.view">View</span> Crown <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
+            <span class="page-number">1 / 7</span>
           </div>
         </div>
 
@@ -113,17 +116,17 @@
               <span class="tag">02 · Restorative</span>
               <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M3 17V9a2 2 0 012-2h14a2 2 0 012 2v8"/><path d="M3 17h18M7 17V9m5 8V9m5 8V9"/></svg></div>
               <h3>Bridge Design</h3>
-              <p>Multi-unit fixed bridges from 3-unit anterior spans to 4–6 unit posterior frameworks, engineered for load distribution and seamless pontic transitions.</p>
+              <p data-i18n="services.bridge.body">Multi-unit fixed bridges from 3-unit anterior spans to 4–6 unit posterior frameworks, engineered for load distribution and seamless pontic transitions.</p>
               <ul class="benefits">
-                <li>Connector strength calculated per span and material</li>
-                <li>Non-rigid connector options for compromised abutments</li>
-                <li>Esthetic gradation across pontics for a natural anterior line</li>
+                <li data-i18n="services.bridge.b1">Connector strength calculated per span and material</li>
+                <li data-i18n="services.bridge.b2">Non-rigid connector options for compromised abutments</li>
+                <li data-i18n="services.bridge.b3">Esthetic gradation across pontics for a natural anterior line</li>
               </ul>
-              <div class="workflow"><span>Scan Intake</span><span>Framework Design</span><span>QC Pass</span><span>Delivery</span></div>
+              <div class="workflow"><span data-i18n="services.wf.scanIntake">Scan Intake</span><span data-i18n="services.wf.frameworkDesign">Framework Design</span><span data-i18n="services.wf.qcPass">QC Pass</span><span data-i18n="services.wf.delivery">Delivery</span></div>
               <div class="meta"><span>Express / Regular</span><b>45 min – 4 hrs</b></div>
             </div>
-            <a href="projects.html?cat=bridges" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;">View Bridge Projects <span class="btn-arrow">→</span></a>
-            <span class="page-number">2 / 6</span>
+            <a href="projects.html?cat=bridges" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;"><span data-i18n="common.view">View</span> Bridge <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
+            <span class="page-number">2 / 7</span>
           </div>
         </div>
 
@@ -134,17 +137,17 @@
               <span class="tag">03 · Implant</span>
               <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3v6m0 0l-2 2m2-2l2 2M9 11h6l-1 10h-4z"/></svg></div>
               <h3>Implant Design</h3>
-              <p>Implant-supported crowns and custom abutments built to exact screw-channel angulation and emergence-profile tolerances, case by case.</p>
+              <p data-i18n="services.implant.body">Implant-supported crowns and custom abutments built to exact screw-channel angulation and emergence-profile tolerances, case by case.</p>
               <ul class="benefits">
-                <li>Screw-retained or cement-retained design, matched to your protocol</li>
-                <li>Abutment and crown coordinated as a single verified system</li>
-                <li>Compatible with major implant systems and scan-body libraries</li>
+                <li data-i18n="services.implant.b1">Screw-retained or cement-retained design, matched to your protocol</li>
+                <li data-i18n="services.implant.b2">Abutment and crown coordinated as a single verified system</li>
+                <li data-i18n="services.implant.b3">Compatible with major implant systems and scan-body libraries</li>
               </ul>
-              <div class="workflow"><span>Scan + Implant Data</span><span>Abutment Design</span><span>Crown Design</span><span>Delivery</span></div>
+              <div class="workflow"><span data-i18n="services.wf.scanImplantData">Scan + Implant Data</span><span data-i18n="services.wf.abutmentDesign">Abutment Design</span><span>Crown Design</span><span data-i18n="services.wf.delivery">Delivery</span></div>
               <div class="meta"><span>Express / Regular</span><b>45 min – 3.5 hrs</b></div>
             </div>
-            <a href="projects.html?cat=fullarch" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;">View Implant Projects <span class="btn-arrow">→</span></a>
-            <span class="page-number">3 / 6</span>
+            <a href="projects.html?cat=fullarch" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;"><span data-i18n="common.view">View</span> Implant <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
+            <span class="page-number">3 / 7</span>
           </div>
         </div>
 
@@ -155,17 +158,17 @@
               <span class="tag">04 · Full-Arch</span>
               <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M4 8c0-3 3.6-5 8-5s8 2 8 5-2 4-2 8-2.5 6-6 6-6-2.5-6-6-2-5-2-8z"/></svg></div>
               <h3>Full Arch Design</h3>
-              <p>Hybrid and full-arch implant frameworks — All-on-4/6/X — plus complete and partial dentures, coordinated across bite, esthetics and structural support.</p>
+              <p data-i18n="services.fullarch.body">Hybrid and full-arch implant frameworks — All-on-4/6/X — plus complete and partial dentures, coordinated across bite, esthetics and structural support.</p>
               <ul class="benefits">
-                <li>Fixed hybrid, removable or combination framework design</li>
-                <li>Full denture and partial framework design included</li>
-                <li>Bite and vertical dimension verified across the full arch</li>
+                <li data-i18n="services.fullarch.b1">Fixed hybrid, removable or combination framework design</li>
+                <li data-i18n="services.fullarch.b2">Full denture and partial framework design included</li>
+                <li data-i18n="services.fullarch.b3">Bite and vertical dimension verified across the full arch</li>
               </ul>
-              <div class="workflow"><span>Records Intake</span><span>Wax-Up / Framework</span><span>QC Pass</span><span>Delivery</span></div>
+              <div class="workflow"><span data-i18n="services.wf.recordsIntake">Records Intake</span><span data-i18n="services.wf.waxupFramework">Wax-Up / Framework</span><span data-i18n="services.wf.qcPass">QC Pass</span><span data-i18n="services.wf.delivery">Delivery</span></div>
               <div class="meta"><span>Express / Regular</span><b>1.5 – 4 hrs</b></div>
             </div>
-            <a href="projects.html?cat=fullarch" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;">View Full Arch Projects <span class="btn-arrow">→</span></a>
-            <span class="page-number">4 / 6</span>
+            <a href="projects.html?cat=fullarch" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;"><span data-i18n="common.view">View</span> Full Arch <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
+            <span class="page-number">4 / 7</span>
           </div>
         </div>
 
@@ -176,17 +179,17 @@
               <span class="tag">05 · Esthetic</span>
               <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></svg></div>
               <h3>Esthetic Design</h3>
-              <p>Anterior cases where shade, translucency and natural light dynamics matter as much as fit — veneers, esthetic crowns and digital smile design mockups built to disappear into a natural smile.</p>
+              <p data-i18n="services.esthetic.body">Anterior cases where shade, translucency and natural light dynamics matter as much as fit — veneers, esthetic crowns and digital smile design mockups built to disappear into a natural smile.</p>
               <ul class="benefits">
-                <li>Digital smile design (DSD) mockups for case approval before milling</li>
-                <li>Shade and translucency mapping matched to adjacent dentition</li>
-                <li>Incisal edge and contact design verified against the facial midline</li>
+                <li data-i18n="services.esthetic.b1">Digital smile design (DSD) mockups for case approval before milling</li>
+                <li data-i18n="services.esthetic.b2">Shade and translucency mapping matched to adjacent dentition</li>
+                <li data-i18n="services.esthetic.b3">Incisal edge and contact design verified against the facial midline</li>
               </ul>
-              <div class="workflow"><span>Smile Scan</span><span>DSD Mockup</span><span>Shade Match</span><span>Delivery</span></div>
+              <div class="workflow"><span data-i18n="services.wf.smileScan">Smile Scan</span><span>DSD Mockup</span><span data-i18n="services.wf.shadeMatch">Shade Match</span><span data-i18n="services.wf.delivery">Delivery</span></div>
               <div class="meta"><span>Express / Regular</span><b>45 min – 3 hrs</b></div>
             </div>
-            <a href="projects.html?cat=esthetic" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;">View Esthetic Projects <span class="btn-arrow">→</span></a>
-            <span class="page-number">5 / 6</span>
+            <a href="projects.html?cat=esthetic" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;"><span data-i18n="common.view">View</span> Esthetic <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
+            <span class="page-number">5 / 7</span>
           </div>
         </div>
 
@@ -197,20 +200,41 @@
               <span class="tag">06 · Surgical &amp; Appliances</span>
               <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v5.5c0 5-3.4 8.7-8 10.5-4.6-1.8-8-5.5-8-10.5V6l8-3z"/></svg></div>
               <h3>Surgical Guides &amp; Appliances</h3>
-              <p>Implant surgical guides planned from CBCT and scan data, plus night guards, splints and orthodontic appliances — the protective and functional side of full-scope design.</p>
+              <p data-i18n="services.guides.body">Implant surgical guides planned from CBCT and scan data, plus night guards, splints and orthodontic appliances — the protective and functional side of full-scope design.</p>
               <ul class="benefits">
-                <li>Surgical guides with verified sleeve position and drill depth</li>
-                <li>Night guards, splints and retainers in hard, soft or dual-layer materials</li>
-                <li>Designed and QC'd by the same named team as every other case</li>
+                <li data-i18n="services.guides.b1">Surgical guides with verified sleeve position and drill depth</li>
+                <li data-i18n="services.guides.b2">Night guards, splints and retainers in hard, soft or dual-layer materials</li>
+                <li data-i18n="services.guides.b3">Designed and QC'd by the same named team as every other case</li>
               </ul>
-              <div class="workflow"><span>CBCT / Scan Intake</span><span>Guide Design</span><span>QC Pass</span><span>Delivery</span></div>
+              <div class="workflow"><span>CBCT / Scan Intake</span><span data-i18n="services.wf.guideDesign">Guide Design</span><span data-i18n="services.wf.qcPass">QC Pass</span><span data-i18n="services.wf.delivery">Delivery</span></div>
               <div class="meta"><span>Express / Regular</span><b>20 min – 2 hrs</b></div>
             </div>
             <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.4rem;">
-              <a href="projects.html?cat=surgical" class="btn btn-ghost btn-sm">Surgical Guide Projects <span class="btn-arrow">→</span></a>
-              <a href="projects.html?cat=appliances" class="btn btn-ghost btn-sm">Appliance Projects <span class="btn-arrow">→</span></a>
+              <a href="projects.html?cat=surgical" class="btn btn-ghost btn-sm">Surgical Guide <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
+              <a href="projects.html?cat=appliances" class="btn btn-ghost btn-sm">Appliance <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
             </div>
-            <span class="page-number">6 / 6</span>
+            <span class="page-number">6 / 7</span>
+          </div>
+        </div>
+
+        <div class="book-page" data-page="7" id="ibar">
+          <div class="page-inner">
+            <div class="page-corner tl"></div><div class="page-corner tr"></div><div class="page-corner bl"></div><div class="page-corner br"></div>
+            <div class="service-card">
+              <span class="tag">07 · Full-Arch</span>
+              <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M4 16c0-6 3.5-11 8-11s8 5 8 11"/><circle cx="7" cy="13" r="1.1"/><circle cx="12" cy="10.3" r="1.1"/><circle cx="17" cy="13" r="1.1"/></svg></div>
+              <h3>I-Bar 13</h3>
+              <p data-i18n="services.ibar.body">A milled implant bar substructure connecting multiple fixtures into one rigid framework — the foundation for a bar-retained overdenture or fixed full-arch restoration, precision-fit to every screw channel.</p>
+              <ul class="benefits">
+                <li data-i18n="services.ibar.b1">CAD-milled bar framework verified for passive fit across all implants</li>
+                <li data-i18n="services.ibar.b2">Screw-access channels aligned to each fixture's exact angulation</li>
+                <li data-i18n="services.ibar.b3">Built as the substructure for bar-retained overdentures or fixed prostheses</li>
+              </ul>
+              <div class="workflow"><span data-i18n="services.wf.implantScanData">Implant Scan Data</span><span data-i18n="services.wf.barDesign">Bar Design</span><span data-i18n="services.wf.passiveFitQc">Passive-Fit QC</span><span data-i18n="services.wf.delivery">Delivery</span></div>
+              <div class="meta"><span>Express / Regular</span><b>1.5 – 4 hrs</b></div>
+            </div>
+            <a href="projects.html?cat=ibar" class="btn btn-ghost btn-sm" style="margin-top:1.4rem;"><span data-i18n="common.view">View</span> I-Bar 13 <span data-i18n="common.projects">Projects</span> <span class="btn-arrow">→</span></a>
+            <span class="page-number">7 / 7</span>
           </div>
         </div>
 
@@ -218,7 +242,7 @@
 
       <div class="book-controls">
         <button class="book-nav prev" id="book-prev" aria-label="Previous page"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <div class="book-indicator"><span id="book-cur">Cover</span></div>
+        <div class="book-indicator"><span id="book-cur" data-i18n="services.book.cover">Cover</span></div>
         <button class="book-nav next" id="book-next" aria-label="Next page"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
     </div>
@@ -230,15 +254,15 @@
 <section class="section" style="background:var(--charcoal);">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">Published, Not Promised</div>
-      <h2>Turnaround, scoped by case type.</h2>
-      <p class="lede" style="margin:1.4rem auto 0;">No blanket guarantee that breaks down under scrutiny — every case type has its own Express and Regular window.</p>
+      <div class="eyebrow" data-i18n="services.sla.eyebrow">Published, Not Promised</div>
+      <h2 data-i18n="services.sla.title">Turnaround, scoped by case type.</h2>
+      <p class="lede" style="margin:1.4rem auto 0;" data-i18n="services.sla.lede">No blanket guarantee that breaks down under scrutiny — every case type has its own Express and Regular window.</p>
     </div>
     <div class="glass" style="border-radius:6px; overflow:hidden;" data-reveal>
       <table style="width:100%; border-collapse:collapse;">
         <thead>
           <tr style="border-bottom:1px solid var(--line);">
-            <th style="text-align:left; padding:1.2rem 1.6rem; font-family:var(--font-sans); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-light);">Case Type</th>
+            <th style="text-align:left; padding:1.2rem 1.6rem; font-family:var(--font-sans); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-light);" data-i18n="services.sla.caseType">Case Type</th>
             <th style="text-align:left; padding:1.2rem 1.6rem; font-family:var(--font-sans); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-light);">Express</th>
             <th style="text-align:left; padding:1.2rem 1.6rem; font-family:var(--font-sans); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-light);">Regular</th>
           </tr>
@@ -262,12 +286,12 @@
 <section class="section">
   <div class="container">
     <div class="cta-band" data-reveal>
-      <div class="eyebrow" style="justify-content:center;">Try Before You Commit</div>
-      <h2>Send one real case. Judge it yourself.</h2>
-      <p class="lede">No contract, no rate card — the first case is free.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="services.ctaFinal.eyebrow">Try Before You Commit</div>
+      <h2 data-i18n="services.ctaFinal.title">Send one real case. Judge it yourself.</h2>
+      <p class="lede" data-i18n="services.ctaFinal.lede">No contract, no rate card — Upload STL.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold">Start a Free First Case <span class="btn-arrow">→</span></a>
-        <a href="projects.html" class="btn btn-ghost">See the Work</a>
+        <a href="contact.html" class="btn btn-gold"><span data-i18n="nav.uploadStl">Upload STL</span> <span class="btn-arrow">→</span></a>
+        <a href="projects.html" class="btn btn-ghost" data-i18n="services.ctaFinal.seeWork">See the Work</a>
       </div>
     </div>
   </div>
@@ -278,20 +302,20 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="brand"><img src="assets/orladent-icon.svg" class="icon" alt="OrlaDent"><span class="wordmark">Orladent</span></a>
-        <p>A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
+        <p data-i18n="footer.tagline">A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
       </div>
       <div class="footer-col">
-        <h4>Sitemap</h4>
+        <h4 data-i18n="footer.sitemap">Sitemap</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" data-i18n="footer.aboutUs">About Us</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="nav.services">Services</h4>
         <ul>
           <li><a href="services.html#crown">Crown Design</a></li>
           <li><a href="services.html#bridge">Bridge Design</a></li>
@@ -301,23 +325,24 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="nav.contact">Contact</h4>
         <ul>
           <li><a href="mailto:orladentagency@gmail.com">orladentagency@gmail.com</a></li>
-          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="contact.html" data-i18n="footer.getInTouch">Get in Touch</a></li>
         </ul>
       </div>
     </div>
     <hr class="divider">
     <div class="footer-bottom">
-      <span>© 2026 OrlaDent. All rights reserved.</span>
-      <span>Exactness, Earned.</span>
+      <span>© 2026 OrlaDent. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="brand.tagline">Exactness, Earned.</span>
     </div>
   </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script src="js/book.js"></script>
 </body>

@@ -200,6 +200,7 @@
   var form = document.querySelector(".contact-form");
   if(form){
     var statusEl = form.querySelector(".form-status");
+    function tr(key, fallback){ return window.OD_I18N ? window.OD_I18N.t(key) : fallback; }
     function setStatus(msg, kind){
       if(!statusEl) return;
       statusEl.textContent = msg;
@@ -214,8 +215,8 @@
       var btn = form.querySelector("button[type=submit]");
       var original = btn.innerHTML;
       btn.disabled = true;
-      btn.innerHTML = "Sending…";
-      setStatus("Sending your message…", "info");
+      btn.innerHTML = tr("contact.form.sendingBtn", "Sending…");
+      setStatus(tr("contact.form.sending", "Sending your message…"), "info");
 
       fetch(form.action, {
         method: "POST",
@@ -225,12 +226,12 @@
         if(!res.ok) throw new Error("Request failed: " + res.status);
         return res.json().catch(function(){ return {}; });
       }).then(function(){
-        btn.innerHTML = "Message Received";
-        setStatus("Thanks — your message was sent. We'll reply within one business day.", "success");
+        btn.innerHTML = tr("contact.form.successBtn", "Message Received");
+        setStatus(tr("contact.form.success", "Thanks — your message was sent. We'll reply within one business day."), "success");
         form.reset();
       }).catch(function(err){
-        btn.innerHTML = "Try Again";
-        setStatus("Something went wrong sending that — please email hello@orladent.com directly, or try again.", "error");
+        btn.innerHTML = tr("contact.form.errorBtn", "Try Again");
+        setStatus(tr("contact.form.error", "Something went wrong sending that — please email hello@orladent.com directly, or try again."), "error");
       }).finally(function(){
         setTimeout(function(){ btn.innerHTML = original; btn.disabled = false; }, 3200);
       });

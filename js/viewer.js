@@ -11,9 +11,11 @@
 (function(){
   var mount = document.getElementById("stl-viewer");
   if(!mount) return;
+  function tr(key, fallback){ return window.OD_I18N ? window.OD_I18N.t(key) : fallback; }
+
   if(typeof THREE === "undefined" || !THREE.STLLoader || !THREE.OrbitControls){
     var loadingElEarly = document.getElementById("stl-loading");
-    if(loadingElEarly){ loadingElEarly.querySelector("span").textContent = "3D viewer unavailable"; }
+    if(loadingElEarly){ loadingElEarly.querySelector("span").textContent = tr("home.viewer.unavailable", "3D viewer unavailable"); }
     return;
   }
 
@@ -167,7 +169,7 @@
     currentIndex = index;
 
     if(loadingEl){
-      loadingEl.querySelector("span").textContent = "Loading case file…";
+      loadingEl.querySelector("span").textContent = tr("home.viewer.loading", "Loading case file…");
       loadingEl.classList.remove("is-hidden");
     }
     if(labelEl) labelEl.textContent = entry.label;
@@ -196,7 +198,7 @@
       },
       undefined,
       function(){
-        if(loadingEl){ loadingEl.querySelector("span").textContent = "Couldn't load the case file"; }
+        if(loadingEl){ loadingEl.querySelector("span").textContent = tr("home.viewer.loadError", "Couldn't load the case file"); }
       }
     );
   }

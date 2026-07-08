@@ -21,17 +21,20 @@
   <div class="container">
     <a href="index.html" class="brand">
       <img src="assets/orladent-icon.svg" alt="OrlaDent" class="icon">
-      <span class="wordmark">Orladent<small>Exactness, Earned</small></span>
+      <span class="wordmark">Orladent<small data-i18n="brand.tagline">Exactness, Earned</small></span>
     </a>
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;">Free First Case</a>
+      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;" data-i18n="nav.uploadStl">Upload STL</a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
+        <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">|</span><span class="lang-opt" data-lang="ar">AR</span>
+      </button>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -39,38 +42,39 @@
 
 
 <div class="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="services.html" data-i18n="nav.services">Services</a>
+  <a href="projects.html" data-i18n="nav.projects">Projects</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="contact.html" data-i18n="nav.contact">Contact</a>
   <!-- <div class="mm-foot">bsaad1213@gmail.com &nbsp;·&nbsp; Est. 2025</div> -->
 </div>
 
 <section class="page-hero">
   <div class="page-hero-media">
     <video autoplay muted loop playsinline poster="assets/images/home-hero-poster.jpg">
-      <source src="assets/video/home-hero.mp4" type="video/mp4">
+      <source src="assets/video/about-story.mp4" type="video/mp4">
     </video>
   </div>
   <div class="container">
-    <div class="breadcrumb">Home <span>/</span> Projects</div>
-    <div class="eyebrow">Case Portfolio</div>
-    <h1 style="max-width:18ch;">Real cases. Real files. Real precision.</h1>
-    <p class="lede" style="margin-top:1.4rem;"><span id="portfolio-count">47</span> design files from the OrlaDent floor — captured straight from the design software, unedited, organized by case type.</p>
+    <div class="breadcrumb"><span data-i18n="nav.home">Home</span> <span>/</span> <span data-i18n="nav.projects">Projects</span></div>
+    <div class="eyebrow" data-i18n="projects.hero.eyebrow">Case Portfolio</div>
+    <h1 style="max-width:18ch;" data-i18n="projects.hero.title">Real cases. Real files. Real precision.</h1>
+    <p class="lede" style="margin-top:1.4rem;" data-i18n-html="projects.hero.lede"><span id="portfolio-count">49</span> design files from the OrlaDent floor — captured straight from the design software, unedited, organized by case type.</p>
   </div>
 </section>
 
 <section class="section" style="padding-top:0;">
   <div class="container">
     <div class="filters" data-reveal>
-      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">All Work</button>
       <button class="filter-btn" data-filter="crowns">Crowns &amp; Inlays</button>
       <button class="filter-btn" data-filter="bridges">Bridges</button>
       <button class="filter-btn" data-filter="esthetic">Esthetic Design</button>
       <button class="filter-btn" data-filter="fullarch">Full Arch &amp; Implant</button>
       <button class="filter-btn" data-filter="surgical">Surgical Guides</button>
       <button class="filter-btn" data-filter="appliances">Appliances</button>
+      <button class="filter-btn" data-filter="ibar">I-Bar 13</button>
     </div>
 
     <div id="portfolio-sliders">
@@ -82,12 +86,12 @@
 <section class="section" style="background:var(--charcoal);">
   <div class="container">
     <div class="cta-band" data-reveal>
-      <div class="eyebrow" style="justify-content:center;">Like What You See?</div>
-      <h2>Your case could be the next file in this gallery.</h2>
-      <p class="lede">First case is free — no contract required.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="projects.cta.eyebrow">Like What You See?</div>
+      <h2 data-i18n="projects.cta.title">Your case could be the next file in this gallery.</h2>
+      <p class="lede" data-i18n="projects.cta.lede">Upload your STL file — no contract required.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold">Start a Free First Case <span class="btn-arrow">→</span></a>
-        <a href="services.html" class="btn btn-ghost">Explore Services</a>
+        <a href="contact.html" class="btn btn-gold"><span data-i18n="nav.uploadStl">Upload STL</span> <span class="btn-arrow">→</span></a>
+        <a href="services.html" class="btn btn-ghost" data-i18n="home.cta.exploreServices">Explore Services</a>
       </div>
     </div>
   </div>
@@ -98,20 +102,20 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="brand"><img src="assets/orladent-icon.svg" class="icon" alt="OrlaDent"><span class="wordmark">Orladent</span></a>
-        <p>A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
+        <p data-i18n="footer.tagline">A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
       </div>
       <div class="footer-col">
-        <h4>Sitemap</h4>
+        <h4 data-i18n="footer.sitemap">Sitemap</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" data-i18n="footer.aboutUs">About Us</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="nav.services">Services</h4>
         <ul>
           <li><a href="services.html#crown">Crown Design</a></li>
           <li><a href="services.html#bridge">Bridge Design</a></li>
@@ -121,17 +125,17 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="nav.contact">Contact</h4>
         <ul>
           <li><a href="mailto:orladentagency@gmail.com">orladentagency@gmail.com</a></li>
-          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="contact.html" data-i18n="footer.getInTouch">Get in Touch</a></li>
         </ul>
       </div>
     </div>
     <hr class="divider">
     <div class="footer-bottom">
-      <span>© 2026 OrlaDent. All rights reserved.</span>
-      <span>Exactness, Earned.</span>
+      <span>© 2026 OrlaDent. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="brand.tagline">Exactness, Earned.</span>
     </div>
   </div>
 </footer>
@@ -152,6 +156,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="js/projects-data.js"></script>
 <script src="js/portfolio.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

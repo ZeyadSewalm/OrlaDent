@@ -21,28 +21,31 @@
   <div class="container">
     <a href="index.html" class="brand">
       <img src="assets/orladent-icon.svg" alt="OrlaDent" class="icon">
-      <span class="wordmark">Orladent<small>Exactness, Earned</small></span>
+      <span class="wordmark">Orladent<small data-i18n="brand.tagline">Exactness, Earned</small></span>
     </a>
     <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="projects.html" data-i18n="nav.projects">Projects</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;">Free First Case</a>
+      <a href="contact.html" class="btn btn-ghost btn-sm" style="background-color: #81641e;" data-i18n="nav.uploadStl">Upload STL</a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Toggle language">
+        <span class="lang-opt" data-lang="en">EN</span><span class="lang-sep">|</span><span class="lang-opt" data-lang="ar">AR</span>
+      </button>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="projects.html">Projects</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html" data-i18n="nav.home">Home</a>
+  <a href="services.html" data-i18n="nav.services">Services</a>
+  <a href="projects.html" data-i18n="nav.projects">Projects</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="contact.html" data-i18n="nav.contact">Contact</a>
  <!-- <div class="mm-foot">bsaad1213@gmail.com &nbsp;·&nbsp; Est. 2025</div> -->
 </div>
 
@@ -50,52 +53,52 @@
 <section class="hero">
   <div class="hero-media">
     <video autoplay muted loop playsinline poster="assets/images/home-hero-poster.jpg">
-      <source src="assets/video/home-hero.mp4" type="video/mp4">
+      <source src="assets/video/about-story.mp4" type="video/mp4">
     </video>
   </div>
   <div class="container hero-content">
-    <div class="hero-kicker"><span class="dot"></span> Digital Dental CAD/CAM Design House</div>
-    <h1>
+    <div class="hero-kicker"><span class="dot"></span> <span data-i18n="home.hero.kicker">Digital Dental CAD/CAM Design House</span></div>
+    <h1 data-i18n-html="home.hero.title">
       <span class="line"><span>Precision, milled</span></span>
       <span class="line"><span>into <em class="text-gold" style="font-style:normal;">every</em> margin.</span></span>
     </h1>
-    <p class="hero-sub">OrlaDent is the design <em class="text-gold" style="font-style:normal;font-weight: bolder;font-size: x-large;">partner</em> that treats speed as a craft — flawless crown, bridge, implant and full-arch design delivered in hours, not days, through a direct relationship with the people doing the work.</p>
+    <p class="hero-sub" data-i18n-html="home.hero.sub">OrlaDent is the design <em class="text-gold" style="font-style:normal;font-weight: bolder;font-size: x-large;">partner</em> that treats speed as a craft — flawless crown, bridge, implant and full-arch design delivered in hours, not days, through a direct relationship with the people doing the work.</p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-gold">Start a Free First Case <span class="btn-arrow">→</span></a>
-      <a href="projects.html" class="btn btn-ghost">View Our Work</a>
+      <a href="contact.html" class="btn btn-gold"><span data-i18n="nav.uploadStl">Upload STL</span> <span class="btn-arrow">→</span></a>
+      <a href="projects.html" class="btn btn-ghost" data-i18n="home.hero.viewWork">View Our Work</a>
     </div>
     <div class="hero-stats" style="align-items: center;">
-      <div class="stat"><b><span data-count="30">0</span><span class="stat-accent">–</span>45<small style="font-size:.9rem;"> min</small></b><span>Express Single Crown</span></div>
-      <div class="stat"><b><span data-count="12">0</span><span class="stat-accent">+</span></b><span>Case Types Supported</span></div>
-      <div class="stat"><b><span data-count="100">0</span><span class="stat-accent">%</span></b><span>Quality Checked</span></div>
-      <div class="stat"><b><span data-count="99">0</span><span class="stat-accent">%</span></b><span>Client Satisfaction</span></div>
+      <div class="stat"><b><span data-count="30">0</span><span class="stat-accent">–</span>45<small style="font-size:.9rem;"> min</small></b><span data-i18n="home.hero.stat1">Express Single Crown</span></div>
+      <div class="stat"><b><span data-count="12">0</span><span class="stat-accent">+</span></b><span data-i18n="home.hero.stat2">Case Types Supported</span></div>
+      <div class="stat"><b><span data-count="100">0</span><span class="stat-accent">%</span></b><span data-i18n="home.hero.stat3">Quality Checked</span></div>
+      <div class="stat"><b><span data-count="5000">0</span><span class="stat-accent">+</span></b><span data-i18n="home.hero.stat4">Cases Handled</span></div>
 
     </div>
   </div>
-  <div class="hero-scroll"><span>Scroll</span><span class="track"></span></div>
+  <div class="hero-scroll"><span data-i18n="common.scroll">Scroll</span><span class="track"></span></div>
 </section>
 
 <!-- LIVE 3D CASE VIEWER -->
 <section class="section-tight">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">Live From The Design Floor</div>
-      <h2>A real case file, in your hands.</h2>
-      <p class="lede" style="margin:1.4rem auto 0;">This is an actual wax-up CAD scan, straight off our design floor — drag to rotate, scroll to zoom, and judge the precision yourself.</p>
+      <div class="eyebrow" data-i18n="home.viewer.eyebrow">Live From The Design Floor</div>
+      <h2 data-i18n="home.viewer.title">A real case file, in your hands.</h2>
+      <p class="lede" style="margin:1.4rem auto 0;" data-i18n="home.viewer.lede">This is an actual wax-up CAD scan, straight off our design floor — drag to rotate, scroll to zoom, and judge the precision yourself.</p>
     </div>
     <div class="viewer-shell" data-reveal>
-      <div class="viewer-badge"><span class="dot"></span> Live Case File</div>
+      <div class="viewer-badge"><span class="dot"></span> <span data-i18n="home.viewer.badge">Live Case File</span></div>
       <div id="stl-viewer" class="stl-viewer"></div>
       <div class="viewer-loading" id="stl-loading">
         <div class="viewer-spinner"></div>
-        <span>Loading case file…</span>
+        <span data-i18n="home.viewer.loading">Loading case file…</span>
       </div>
       <div class="viewer-controls">
-        <button class="viewer-btn" id="stl-autorotate" aria-pressed="true">Auto-Rotate</button>
-        <button class="viewer-btn" id="stl-wireframe" aria-pressed="false">Wireframe</button>
-        <button class="viewer-btn" id="stl-reset">Reset View</button>
+        <button class="viewer-btn" id="stl-autorotate" aria-pressed="true" data-i18n="home.viewer.autoRotate">Auto-Rotate</button>
+        <button class="viewer-btn" id="stl-wireframe" aria-pressed="false" data-i18n="home.viewer.wireframe">Wireframe</button>
+        <button class="viewer-btn" id="stl-reset" data-i18n="home.viewer.reset">Reset View</button>
       </div>
-      <div class="viewer-hint"><span>Drag to Rotate</span><span>·</span><span>Scroll to Zoom</span><span>·</span><span id="stl-model-label">Wax-Up CAD, Exocad</span></div>
+      <div class="viewer-hint"><span data-i18n="home.viewer.dragHint">Drag to Rotate</span><span>·</span><span data-i18n="home.viewer.scrollHint">Scroll to Zoom</span><span>·</span><span id="stl-model-label">Wax-Up CAD, Exocad</span></div>
       <div class="viewer-switcher" id="stl-switcher"></div>
     </div>
   </div>
@@ -107,9 +110,9 @@
 <section class="section">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">Who We Are</div>
-      <h2>An outsourcing relationship that never feels outsourced.</h2>
-      <p class="lede" style="margin:1.4rem auto 0;">Speed is never a discount signal — it's evidence of discipline. One design house. One named team. Every case, exact.</p>
+      <div class="eyebrow" data-i18n="home.intro.eyebrow">Who We Are</div>
+      <h2 data-i18n="home.intro.title">An outsourcing relationship that never feels outsourced.</h2>
+      <p class="lede" style="margin:1.4rem auto 0;" data-i18n="home.intro.lede">Speed is never a discount signal — it's evidence of discipline. One design house. One named team. Every case, exact.</p>
     </div>
   </div>
   <div class="marquee-wrap">
@@ -123,31 +126,31 @@
 <section class="section" id="pillars">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">The Three Laws</div>
-      <h2>The Golden Queen's Standard</h2>
-      <p class="lede" style="margin:1.4rem auto 0;">Every touchpoint at OrlaDent is built on three verifiable proof points — not adjectives, but promises you can measure against real cases.</p>
+      <div class="eyebrow" data-i18n="home.laws.eyebrow">The Three Laws</div>
+      <h2 data-i18n="home.laws.title">The Golden Queen's Standard</h2>
+      <p class="lede" style="margin:1.4rem auto 0;" data-i18n="home.laws.lede">Every touchpoint at OrlaDent is built on three verifiable proof points — not adjectives, but promises you can measure against real cases.</p>
     </div>
     <div class="grid grid-3" data-reveal-group>
       <div class="pillar-card glass" data-reveal>
         <span class="num">I.</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
-        <span class="law">The Law of Exactness</span>
-        <h3>Precision Under Pressure</h3>
-        <p>Flawless margin and occlusion accuracy on every case — proven through a Gold Standard portfolio of CAD mesh files paired against finished, milled crowns. Speed is never a gimmick; it's proof of discipline.</p>
+        <span class="law" data-i18n="home.laws.law1.tag">The Law of Exactness</span>
+        <h3 data-i18n="home.laws.law1.title">Precision Under Pressure</h3>
+        <p data-i18n="home.laws.law1.body">Flawless margin and occlusion accuracy on every case — proven through a Gold Standard portfolio of CAD mesh files paired against finished, milled crowns. Speed is never a gimmick; it's proof of discipline.</p>
       </div>
       <div class="pillar-card glass" data-reveal>
         <span class="num">II.</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5z"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div>
-        <span class="law">The Law of the Royal Court</span>
-        <h3>The Human Line</h3>
-        <p>No faceless armies, no ticket queues, no rotating freelancers. A real, named designer and team relationship — a dependable extension of your own bench who picks up the phone.</p>
+        <span class="law" data-i18n="home.laws.law2.tag">The Law of the Royal Court</span>
+        <h3 data-i18n="home.laws.law2.title">The Human Line</h3>
+        <p data-i18n="home.laws.law2.body">No faceless armies, no ticket queues, no rotating freelancers. A real, named designer and team relationship — a dependable extension of your own bench who picks up the phone.</p>
       </div>
       <div class="pillar-card glass" data-reveal>
         <span class="num">III.</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/></svg></div>
-        <span class="law">The Law of the Vault</span>
-        <h3>Earned Gold</h3>
-        <p>Premium is never simply claimed — it's demonstrated case by case, against published, case-type-specific SLAs. Our gold standard is earned every single time, not assumed once.</p>
+        <span class="law" data-i18n="home.laws.law3.tag">The Law of the Vault</span>
+        <h3 data-i18n="home.laws.law3.title">Earned Gold</h3>
+        <p data-i18n="home.laws.law3.body">Premium is never simply claimed — it's demonstrated case by case, against published, case-type-specific SLAs. Our gold standard is earned every single time, not assumed once.</p>
       </div>
     </div>
   </div>
@@ -158,47 +161,47 @@
   <div class="container">
     <div class="section-head split" data-reveal>
       <div>
-        <div class="eyebrow">Full-Scope Design</div>
-        <h2>One partner. Every case type.</h2>
+        <div class="eyebrow" data-i18n="home.servicesPreview.eyebrow">Full-Scope Design</div>
+        <h2 data-i18n="home.servicesPreview.title">One partner. Every case type.</h2>
       </div>
-      <a href="services.html" class="btn btn-ghost">All Services <span class="btn-arrow">→</span></a>
+      <a href="services.html" class="btn btn-ghost"><span data-i18n="home.servicesPreview.allServices">All Services</span> <span class="btn-arrow">→</span></a>
     </div>
     <div class="grid grid-3" data-reveal-group>
       <div class="service-card glass" data-reveal>
         <span class="tag">Restorative</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3c-4 0-6 3-6 6.5 0 4 2 6 2.5 8.5.3 1.5 1 2 1.8 0 .5-1.3.8-2 1.7-2s1.2.7 1.7 2c.8 2 1.5 1.5 1.8 0 .5-2.5 2.5-4.5 2.5-8.5C18 6 16 3 12 3z"/></svg></div>
         <h3>Crown Design</h3>
-        <p>Anatomically precise single-unit crowns with flawless margins and natural occlusion, milled-ready on delivery.</p>
+        <p data-i18n="home.servicesPreview.crown">Anatomically precise single-unit crowns with flawless margins and natural occlusion, milled-ready on delivery.</p>
       </div>
       <div class="service-card glass" data-reveal>
         <span class="tag">Restorative</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M3 17V9a2 2 0 012-2h14a2 2 0 012 2v8"/><path d="M3 17h18M7 17V9m5 8V9m5 8V9"/></svg></div>
         <h3>Bridge Design</h3>
-        <p>Multi-unit bridges engineered for load distribution, connector strength and seamless esthetic transitions.</p>
+        <p data-i18n="home.servicesPreview.bridge">Multi-unit bridges engineered for load distribution, connector strength and seamless esthetic transitions.</p>
       </div>
       <div class="service-card glass" data-reveal>
         <span class="tag">Implant</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 3v6m0 0l-2 2m2-2l2 2M9 11h6l-1 10h-4z"/></svg></div>
         <h3>Implant Design</h3>
-        <p>Abutment and implant-supported restorations built to exact screw-channel and emergence-profile tolerances.</p>
+        <p data-i18n="home.servicesPreview.implant">Abutment and implant-supported restorations built to exact screw-channel and emergence-profile tolerances.</p>
       </div>
       <div class="service-card glass" data-reveal>
         <span class="tag">Full-Arch</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M4 8c0-3 3.6-5 8-5s8 2 8 5-2 4-2 8-2.5 6-6 6-6-2.5-6-6-2-5-2-8z"/></svg></div>
         <h3>Full Arch Design</h3>
-        <p>Hybrid and full-arch implant frameworks — All-on-4/6/X — coordinated across bite, esthetics and structure.</p>
+        <p data-i18n="home.servicesPreview.fullarch">Hybrid and full-arch implant frameworks — All-on-4/6/X — coordinated across bite, esthetics and structure.</p>
       </div>
       <div class="service-card glass" data-reveal>
         <span class="tag">Priority</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Express Service</h3>
-        <p>Chairside-ready turnaround as fast as 30–45 minutes on a single crown — same discipline, compressed clock.</p>
+        <p data-i18n="home.servicesPreview.express">Chairside-ready turnaround as fast as 30–45 minutes on a single crown — same discipline, compressed clock.</p>
       </div>
       <div class="service-card glass" data-reveal>
         <span class="tag">Platform</span>
         <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
         <h3>Digital CAD/CAM Solutions</h3>
-        <p>Crowns, bridges, implants, orthodontic and removable — one design house for a lab's entire case mix.</p>
+        <p data-i18n="home.servicesPreview.cadcam">Crowns, bridges, implants, orthodontic and removable — one design house for a lab's entire case mix.</p>
       </div>
     </div>
   </div>
@@ -208,32 +211,32 @@
 <section class="section">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">How It Works</div>
-      <h2>From scan to milling-ready, on a clock you can trust.</h2>
+      <div class="eyebrow" data-i18n="home.process.eyebrow">How It Works</div>
+      <h2 data-i18n="home.process.title">From scan to milling-ready, on a clock you can trust.</h2>
     </div>
     <div class="process" data-reveal-group>
       <div class="process-step" data-reveal>
         <span class="step-no">01</span>
-        <h4>Submit Scan &amp; Rx</h4>
-        <p>Send your intraoral scan or model file with case notes through your preferred workflow — no new software to learn.</p>
+        <h4 data-i18n="home.process.step1.title">Submit Scan &amp; Rx</h4>
+        <p data-i18n="home.process.step1.body">Send your intraoral scan or model file with case notes through your preferred workflow — no new software to learn.</p>
         <span class="arrow">→</span>
       </div>
       <div class="process-step" data-reveal>
         <span class="step-no">02</span>
-        <h4>Named Designer Assigned</h4>
-        <p>Your case goes to a real designer who understands occlusion and esthetics — not a rotating queue.</p>
+        <h4 data-i18n="home.process.step2.title">Named Designer Assigned</h4>
+        <p data-i18n="home.process.step2.body">Your case goes to a real designer who understands occlusion and esthetics — not a rotating queue.</p>
         <span class="arrow">→</span>
       </div>
       <div class="process-step" data-reveal>
         <span class="step-no">03</span>
-        <h4>Design &amp; Quality Check</h4>
-        <p>Margins, contacts and occlusion are verified against our Gold Standard before anything ships.</p>
+        <h4 data-i18n="home.process.step3.title">Design &amp; Quality Check</h4>
+        <p data-i18n="home.process.step3.body">Margins, contacts and occlusion are verified against our Gold Standard before anything ships.</p>
         <span class="arrow">→</span>
       </div>
       <div class="process-step" data-reveal>
         <span class="step-no">04</span>
-        <h4>Delivered Within SLA</h4>
-        <p>Milling-ready files land inside the published Express or Regular window for your exact case type.</p>
+        <h4 data-i18n="home.process.step4.title">Delivered Within SLA</h4>
+        <p data-i18n="home.process.step4.body">Milling-ready files land inside the published Express or Regular window for your exact case type.</p>
       </div>
     </div>
   </div>
@@ -244,10 +247,10 @@
   <div class="container">
     <div class="section-head split" data-reveal>
       <div>
-        <div class="eyebrow">Selected Work</div>
-        <h2>Case files from the design floor.</h2>
+        <div class="eyebrow" data-i18n="home.featured.eyebrow">Selected Work</div>
+        <h2 data-i18n="home.featured.title">Case files from the design floor.</h2>
       </div>
-      <a href="projects.html" class="btn btn-ghost">Full Portfolio <span class="btn-arrow">→</span></a>
+      <a href="projects.html" class="btn btn-ghost"><span data-i18n="home.featured.fullPortfolio">Full Portfolio</span> <span class="btn-arrow">→</span></a>
     </div>
     <div class="grid grid-4" data-reveal-group id="featured-projects">
       <!-- injected via inline list below for reliability without JS fetch -->
@@ -260,26 +263,26 @@
   <div class="container">
     <div class="grid grid-2" style="align-items:center; gap:64px;">
       <div data-reveal>
-        <div class="eyebrow">Why OrlaDent</div>
-        <h2>Outsourcing that behaves like your own bench.</h2>
-        <p class="lede">Every reason to choose OrlaDent, verified on your first case — not promised for later.</p>
+        <div class="eyebrow" data-i18n="home.why.eyebrow">Why OrlaDent</div>
+        <h2 data-i18n="home.why.title">Outsourcing that behaves like your own bench.</h2>
+        <p class="lede" data-i18n="home.why.lede">Every reason to choose OrlaDent, verified on your first case — not promised for later.</p>
       </div>
       <div data-reveal>
         <div class="feature-row">
           <span class="f-index">01</span>
-          <div><h4>First Case, Free</h4><p>Judge the margins and turnaround yourself, on us.</p></div>
+          <div><h4 data-i18n="nav.uploadStl">Upload STL</h4><p data-i18n="home.why.item1">Judge the margins and turnaround yourself, on us.</p></div>
         </div>
         <div class="feature-row">
           <span class="f-index">02</span>
-          <div><h4>Case-Type SLAs, Published</h4><p>Turnaround scoped by complexity, never a vague promise.</p></div>
+          <div><h4 data-i18n="home.why.item2.title">Case-Type SLAs, Published</h4><p data-i18n="home.why.item2.body">Turnaround scoped by complexity, never a vague promise.</p></div>
         </div>
         <div class="feature-row">
           <span class="f-index">03</span>
-          <div><h4>One Designer, Not a Ticket Number</h4><p>The same named designer, every case.</p></div>
+          <div><h4 data-i18n="home.why.item3.title">One Designer, Not a Ticket Number</h4><p data-i18n="home.why.item3.body">The same named designer, every case.</p></div>
         </div>
         <div class="feature-row">
           <span class="f-index">04</span>
-          <div><h4>Full-Scope Capability</h4><p>Crowns to full-arch — one partner, never split.</p></div>
+          <div><h4 data-i18n="home.why.item4.title">Full-Scope Capability</h4><p data-i18n="home.why.item4.body">Crowns to full-arch — one partner, never split.</p></div>
         </div>
       </div>
     </div>
@@ -290,17 +293,17 @@
 <section class="section" style="background:var(--charcoal);">
   <div class="container">
     <div class="section-head center" data-reveal>
-      <div class="eyebrow">Client Journey</div>
-      <h2>From first hello to active partner.</h2>
+      <div class="eyebrow" data-i18n="home.journey.eyebrow">Client Journey</div>
+      <h2 data-i18n="home.journey.title">From first hello to active partner.</h2>
     </div>
     <div class="journey-track" data-reveal>
       <div class="journey-line"><div class="fill"></div></div>
       <div class="journey-steps">
-        <div class="journey-step"><div class="journey-dot">1</div><h4>Inquire</h4><p>A quick conversation about your case mix and volume.</p></div>
-        <div class="journey-step"><div class="journey-dot">2</div><h4>Free First Case</h4><p>We design one case, on us — no contract required.</p></div>
-        <div class="journey-step"><div class="journey-dot">3</div><h4>You Evaluate</h4><p>Judge margins, esthetics and turnaround against your own standard.</p></div>
-        <div class="journey-step"><div class="journey-dot">4</div><h4>Volume Conversation</h4><p>We scope a quote around your real monthly case flow.</p></div>
-        <div class="journey-step"><div class="journey-dot">5</div><h4>Active Partnership</h4><p>Recurring capacity, on call, without the overhead of hiring.</p></div>
+        <div class="journey-step"><div class="journey-dot">1</div><h4 data-i18n="home.journey.step1.title">Inquire</h4><p data-i18n="home.journey.step1.body">A quick conversation about your case mix and volume.</p></div>
+        <div class="journey-step"><div class="journey-dot">2</div><h4 data-i18n="nav.uploadStl">Upload STL</h4><p data-i18n="home.journey.step2.body">We design one case, on us — no contract required.</p></div>
+        <div class="journey-step"><div class="journey-dot">3</div><h4 data-i18n="home.journey.step3.title">You Evaluate</h4><p data-i18n="home.journey.step3.body">Judge margins, esthetics and turnaround against your own standard.</p></div>
+        <div class="journey-step"><div class="journey-dot">4</div><h4 data-i18n="home.journey.step4.title">Volume Conversation</h4><p data-i18n="home.journey.step4.body">We scope a quote around your real monthly case flow.</p></div>
+        <div class="journey-step"><div class="journey-dot">5</div><h4 data-i18n="home.journey.step5.title">Active Partnership</h4><p data-i18n="home.journey.step5.body">Recurring capacity, on call, without the overhead of hiring.</p></div>
       </div>
     </div>
   </div>
@@ -310,12 +313,12 @@
 <section class="section">
   <div class="container">
     <div class="cta-band" data-reveal>
-      <div class="eyebrow" style="justify-content:center;">Ready When You Are</div>
-      <h2>Send your first case. See exactness, earned.</h2>
-      <p class="lede">No contract, no rate card, no risk — just the work, judged on its own merit.</p>
+      <div class="eyebrow" style="justify-content:center;" data-i18n="home.cta.eyebrow">Ready When You Are</div>
+      <h2 data-i18n="home.cta.title">Send your first case. See exactness, earned.</h2>
+      <p class="lede" data-i18n="home.cta.lede">No contract, no rate card, no risk — just the work, judged on its own merit.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-gold">Start a Free First Case <span class="btn-arrow">→</span></a>
-        <a href="services.html" class="btn btn-ghost">Explore Services</a>
+        <a href="contact.html" class="btn btn-gold"><span data-i18n="nav.uploadStl">Upload STL</span><span class="btn-arrow">→</span></a>
+        <a href="services.html" class="btn btn-ghost" data-i18n="home.cta.exploreServices">Explore Services</a>
       </div>
     </div>
   </div>
@@ -326,16 +329,16 @@
   <div class="container">
     <div class="grid grid-3">
       <div class="info-card glass" data-reveal>
-        <span class="ic-label">Email</span>
+        <span class="ic-label" data-i18n="common.email">Email</span>
         <span class="ic-value">orladentagency@gmail.com</span>
       </div>
       <div class="info-card glass" data-reveal>
-        <span class="ic-label">Based In</span>
-        <span class="ic-value">Egypt · Est. 2025</span>
+        <span class="ic-label" data-i18n="common.basedIn">Based In</span>
+        <span class="ic-value" data-i18n="common.basedInValue">Egypt · Est. 2025</span>
       </div>
       <div class="info-card glass" data-reveal>
-        <span class="ic-label">Response Time</span>
-        <span class="ic-value">Within one business day</span>
+        <span class="ic-label" data-i18n="common.responseTime">Response Time</span>
+        <span class="ic-value" data-i18n="common.responseTimeValue">Within one business day</span>
       </div>
     </div>
   </div>
@@ -347,20 +350,20 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="index.html" class="brand"><img src="assets/orladent-icon.svg" class="icon" alt="OrlaDent"><span class="wordmark">Orladent</span></a>
-        <p>A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
+        <p data-i18n="footer.tagline">A digital dental CAD/CAM design house delivering precision crown, bridge, implant and full-arch design — fast, without ever trading away quality.</p>
       </div>
       <div class="footer-col">
-        <h4>Sitemap</h4>
+        <h4 data-i18n="footer.sitemap">Sitemap</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="about.html" data-i18n="footer.aboutUs">About Us</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4 data-i18n="nav.services">Services</h4>
         <ul>
           <li><a href="services.html#crown">Crown Design</a></li>
           <li><a href="services.html#bridge">Bridge Design</a></li>
@@ -370,17 +373,17 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-i18n="nav.contact">Contact</h4>
         <ul>
           <li><a href="mailto:orladentagency@gmail.com">orladentagency@gmail.com</a></li>
-          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="contact.html" data-i18n="footer.getInTouch">Get in Touch</a></li>
         </ul>
       </div>
     </div>
     <hr class="divider">
     <div class="footer-bottom">
-      <span>© 2026 OrlaDent. All rights reserved.</span>
-      <span>Exactness, Earned.</span>
+      <span>© 2026 OrlaDent. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="brand.tagline">Exactness, Earned.</span>
     </div>
   </div>
 </footer>
@@ -390,6 +393,7 @@
 <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
 <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
 <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/projects-data.js"></script>
 <script src="js/featured.js"></script>
 <script src="js/viewer.js"></script>

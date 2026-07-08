@@ -421,5 +421,23 @@ window.PROJECTS = [
     "file": "assets/images/projects/inlay-onlay/inlay-onlay-047.jpg",
     "orig": "onlay.jpeg",
     "title": "Ceramic Onlay Design"
+  },
+  {
+    "id": 48,
+    "slug": "ibar",
+    "label": "I-Bar 13",
+    "group": "ibar",
+    "file": "assets/images/projects/ibar/ibar-001.jpg",
+    "orig": "full arch.jfif",
+    "title": "Full-Arch Implant Bar"
+  },
+  {
+    "id": 49,
+    "slug": "ibar",
+    "label": "I-Bar 13",
+    "group": "ibar",
+    "file": "assets/images/projects/ibar/ibar-002.jpg",
+    "orig": "bridge.jfif",
+    "title": "I-Bar Bridge Framework"
   }
 ];
