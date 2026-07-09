@@ -244,7 +244,7 @@ section{ position:relative; }
 .nav .container{ display:flex; align-items:center; justify-content:space-between; }
 
 .brand{ display:flex; align-items:center; gap:.7em; z-index:2; }
-.brand .icon{ width:120px; height:auto; flex-shrink:0; }
+.brand .icon{ width:74px; height:auto; flex-shrink:0; }
 .brand .wordmark{ font-family: var(--font-serif); font-size:1.9rem; font-weight:700; letter-spacing:.02em; color:var(--cream); line-height:1; }
 .brand .wordmark small{ display:block; font-family:var(--font-sans); font-size:.8rem; letter-spacing:.28em; color:var(--gold-light); font-weight:600; margin-top:.4em; text-transform:uppercase; }
 
@@ -364,10 +364,11 @@ section{ position:relative; }
 .hero-kicker .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px 2px var(--gold); }
 
 .hero h1{
-  max-width: 15ch;
+  max-width: 13ch;
   font-size: clamp(2.8rem, 7.2vw, 6.6rem);
+  
 }
-.hero h1 .line{ display:block; overflow:hidden; }
+.hero h1 .line{ display:block; overflow:hidden; padding-bottom: 0.12em; }
 .hero h1 .line span{ display:inline-block; will-change: transform; }
 
 .hero-sub{
@@ -1139,11 +1140,11 @@ html[dir="rtl"]{ direction: rtl; }
   .masonry{ columns: 2 200px; }
   .form-row{ grid-template-columns: 1fr; }
   .section-head.split{ flex-direction:column; align-items:flex-start; }
-  .brand .icon{ width:84px; }
+  .brand .icon{ width:52px; }
 }
 
 @media (max-width: 600px){
-  .brand .icon{ width:64px; }
+  .brand .icon{ width:40px; }
 }
 
 @media (max-width: 600px){

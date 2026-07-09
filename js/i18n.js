@@ -172,9 +172,9 @@
       "services.hero.title": "Every case type. One accountable partner.",
       "services.hero.lede": "Turnaround is scoped by case complexity, not promised in a single flat number — so the speed claim stays defensible, case by case.",
       "services.book.title": "Turn the page on every case type.",
-      "services.book.lede": "Six disciplines, one open book — flip through to see how each case is designed.",
+      "services.book.lede": "Seven disciplines, one open book — flip through to see how each case is designed.",
       "services.book.coverTitle": "Our Services",
-      "services.book.coverSub": "Six Disciplines. One Design House.",
+      "services.book.coverSub": "Seven Disciplines. One Design House.",
       "services.book.cover": "Cover",
 
       "services.crown.body": "Single-unit anatomical crowns — including inlays, onlays and veneers — designed for flawless margins and natural occlusal contact from the first proposal.",
@@ -432,9 +432,9 @@
       "services.hero.title": "كل نوع حالة. شريك واحد مسؤول.",
       "services.hero.lede": "سرعة التسليم محددة حسب تعقيد الحالة، لا موعودة برقم ثابت واحد — حتى يبقى ادعاء السرعة قابلًا للدفاع عنه، حالة بحالة.",
       "services.book.title": "اقلب الصفحة على كل نوع حالة.",
-      "services.book.lede": "ست تخصصات، في كتاب واحد مفتوح — اقلب الصفحات لترى كيف تُصمَّم كل حالة.",
+      "services.book.lede": "سبعة تخصصات، في كتاب واحد مفتوح — اقلب الصفحات لترى كيف تُصمَّم كل حالة.",
       "services.book.coverTitle": "خدماتنا",
-      "services.book.coverSub": "ست تخصصات. بيت تصميم واحد.",
+      "services.book.coverSub": "سبعة تخصصات. بيت تصميم واحد.",
       "services.book.cover": "الغلاف",
 
       "services.crown.body": "تيجان تشريحية أحادية الوحدة — بما فيها الإنليه والأونليه والفينير — مصممة لحواف لا تشوبها شائبة وتماس إطباقي طبيعي من أول مقترح.",

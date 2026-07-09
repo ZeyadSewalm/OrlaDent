@@ -1,13 +1,14 @@
 /* Interactive 3D case-file viewer — Three.js + STLLoader + OrbitControls.
-   Loads a real wax-up CAD scan and lets visitors drag to rotate, scroll to
+   Loads real case-file STL scans and lets visitors drag to rotate, scroll to
    zoom, toggle auto-rotate / wireframe, and reset the view. Only runs if the
    #stl-viewer mount point exists (home page) and Three.js loaded successfully
    from the CDN.
 
    Supports multiple case files: add entries to MODELS below (label + file
    path) and a small pill switcher appears automatically letting visitors
-   flip between them. The first entry in the array is the one shown when the
-   page loads. With only one entry (today), the switcher stays hidden. */
+   flip between them. The first entry in the array is the default/primary
+   model shown on load; with more than one entry the switcher pills render
+   automatically (hidden via CSS when there's only one). */
 (function(){
   var mount = document.getElementById("stl-viewer");
   if(!mount) return;
@@ -24,7 +25,10 @@
      no other code changes needed. The first entry is the default/primary
      model shown on load. */
   var MODELS = [
-    { label: "Wax-Up CAD, Exocad", file: "assets/models/waxup-cad.stl" }
+    { label: "All-on-5 Full Arch, Exocad", file: "assets/models/all-on-5.stl" },
+    { label: "Case 3-3 Design, Exocad", file: "assets/models/case-3-3.stl" },
+    { label: "Complete Denture, Exocad", file: "assets/models/complete-denture.stl" },
+    { label: "Veneer Case, Exocad", file: "assets/models/veneer.stl" }
   ];
 
   var loadingEl = document.getElementById("stl-loading");
@@ -42,6 +46,13 @@
   var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputEncoding = THREE.sRGBEncoding || renderer.outputEncoding;
+  /* Filmic tone mapping keeps the brighter lighting rig below from blowing
+     out highlights while still giving enough dynamic range to read fine
+     surface detail (margins, cusps, connector geometry) clearly. */
+  if(THREE.ACESFilmicToneMapping){
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+  }
   mount.appendChild(renderer.domElement);
 
   /* ---------------- Lighting ----------------
@@ -51,25 +62,36 @@
      environment map (so reflections exist all around, not just where a
      direct light happens to hit), a hemisphere light for broad top/bottom
      fill, and a dedicated front light along the camera's default sightline
-     so the model reads clearly the moment the page loads, front-on. */
-  scene.add(new THREE.HemisphereLight(0x6d5a3a, 0x0b0906, 1.35));
-  scene.add(new THREE.AmbientLight(0x554430, 0.6));
+     so the model reads clearly the moment the page loads, front-on.
+     Intensities are pushed noticeably higher than a typical scene because
+     these case files carry fine anatomical detail (margins, occlusal
+     anatomy, connector geometry) that needs to stay visible in every area
+     of the mesh, not just the parts facing a single key light. */
+  scene.add(new THREE.HemisphereLight(0x8a744c, 0x241d12, 2.1));
+  scene.add(new THREE.AmbientLight(0x6b5a3c, 1.0));
 
-  var front = new THREE.DirectionalLight(0xfff1d6, 1.9);
+  var front = new THREE.DirectionalLight(0xfff6e2, 2.6);
   front.position.set(0, 4, 130);
   scene.add(front);
 
-  var key = new THREE.DirectionalLight(0xffe3ac, 1.4);
+  var key = new THREE.DirectionalLight(0xffedc2, 2.0);
   key.position.set(6, 8, 10);
   scene.add(key);
 
-  var rim = new THREE.DirectionalLight(0x8fa0ff, 0.5);
+  var rim = new THREE.DirectionalLight(0x9fb3ff, 0.75);
   rim.position.set(-8, -4, -6);
   scene.add(rim);
 
-  var fill = new THREE.PointLight(0xc3a019, 0.7, 0, 2);
+  var fill = new THREE.PointLight(0xd8b56a, 1.1, 0, 2);
   fill.position.set(-6, 5, 8);
   scene.add(fill);
+
+  /* Extra top-down soft light so occlusal/incisal surfaces (the details
+     that face "up" relative to the camera) don't fall into shadow — the
+     rig above is strongest from the front, this one fills the top. */
+  var top = new THREE.DirectionalLight(0xffffff, 0.9);
+  top.position.set(0, 60, 20);
+  scene.add(top);
 
   /* Small procedural environment map (dark floor -> warm ceiling gradient)
      so the gold material has something soft to reflect on every surface,
@@ -83,9 +105,9 @@
       c.width = 8; c.height = 128;
       var ctx = c.getContext("2d");
       var grad = ctx.createLinearGradient(0, 0, 0, 128);
-      grad.addColorStop(0, "#4a3c24");
-      grad.addColorStop(0.45, "#241b10");
-      grad.addColorStop(1, "#0a0806");
+      grad.addColorStop(0, "#8a7448");
+      grad.addColorStop(0.45, "#3c2f1c");
+      grad.addColorStop(1, "#140f0a");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 8, 128);
       var envTex = new THREE.CanvasTexture(c);
@@ -98,12 +120,12 @@
   })();
 
   var solidMaterial = new THREE.MeshPhysicalMaterial({
-    color: 0xd8b158,
-    metalness: 0.55,
-    roughness: 0.32,
-    clearcoat: 0.35,
-    clearcoatRoughness: 0.25,
-    reflectivity: 0.5
+    color: 0xe4c179,
+    metalness: 0.42,
+    roughness: 0.3,
+    clearcoat: 0.45,
+    clearcoatRoughness: 0.2,
+    reflectivity: 0.6
   });
   var wireMaterial = new THREE.MeshBasicMaterial({ color: 0xe7c17c, wireframe: true, transparent: true, opacity: 0.55 });
 

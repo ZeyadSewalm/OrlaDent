@@ -51,7 +51,7 @@ window.PROJECTS = [
     "group": "bridges",
     "file": "assets/images/projects/bridge/bridge-006.jpg",
     "orig": "4 ant.jpeg",
-    "title": "4-Unit Anterior Bridge"
+    "title": "Anterior Bridge, Design vs. Final"
   },
   {
     "id": 7,
@@ -159,7 +159,7 @@ window.PROJECTS = [
     "group": "esthetic",
     "file": "assets/images/projects/mockup-dsd/mockup-dsd-018.jpg",
     "orig": "dsd upper&lower.jpeg",
-    "title": "DSD Full Arch Preview"
+    "title": "Anterior Smile Transformation"
   },
   {
     "id": 19,
@@ -303,7 +303,7 @@ window.PROJECTS = [
     "group": "fullarch",
     "file": "assets/images/projects/full-arch/full-arch-034.jpg",
     "orig": "upper3.jpeg",
-    "title": "Full-Arch Try-In"
+    "title": "Full-Arch Crown Try-In, Clinical"
   },
   {
     "id": 35,
@@ -357,7 +357,7 @@ window.PROJECTS = [
     "group": "fullarch",
     "file": "assets/images/projects/all-on-x/all-on-x-040.jpg",
     "orig": "all on 4.jpeg",
-    "title": "All-on-6 Implant Bridge"
+    "title": "Full-Arch Framework Design"
   },
   {
     "id": 41,
