@@ -145,24 +145,8 @@
     });
   }
 
-  /* ---------------- Journey step in-view ---------------- */
-  var journeySteps = document.querySelectorAll(".journey-step");
-  var journeyFill = document.querySelector(".journey-line .fill");
-  if(journeySteps.length && hasGSAP){
-    ScrollTrigger.create({
-      trigger: ".journey-track",
-      start: "top 70%",
-      end: "bottom 60%",
-      onUpdate: function(self){
-        var p = self.progress;
-        var idx = Math.floor(p * journeySteps.length);
-        journeySteps.forEach(function(s, i){
-          if(i <= idx){ s.classList.add("in-view"); } else { s.classList.remove("in-view"); }
-        });
-        if(journeyFill){ journeyFill.style.width = (p*100)+"%"; }
-      }
-    });
-  }
+  /* Journey roadmap now animates continuously via CSS (see .journey-line-run /
+     .journey-node keyframes in style.css) rather than scroll-scrubbed JS. */
 
   /* ---------------- Counters ---------------- */
   document.querySelectorAll("[data-count]").forEach(function(el){

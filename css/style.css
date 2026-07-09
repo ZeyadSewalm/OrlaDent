@@ -749,25 +749,60 @@ section{ position:relative; }
 
 .journey-track{ position:relative; }
 .journey-line{
-  position:absolute; left:0; right:0; top: 27px; height:1px;
+  position:absolute; left:0; right:0; top: 27px; height:2px;
   background: var(--line);
+  border-radius:2px;
+  overflow:hidden;
 }
-.journey-line .fill{
-  position:absolute; left:0; top:0; height:100%; width:0%;
-  background: var(--grad-gold);
+.journey-line-run{
+  position:absolute; top:0; inset-inline-start:0;
+  width:16%; height:100%;
+  background: linear-gradient(90deg, transparent, var(--gold-light) 35%, var(--gold-bright) 50%, var(--gold-light) 65%, transparent);
+  filter: drop-shadow(0 0 6px rgba(200,159,98,.85)) drop-shadow(0 0 14px rgba(200,159,98,.45));
+  animation: journeyRun 5s linear infinite;
+}
+@keyframes journeyRun{
+  0%{ inset-inline-start:-16%; }
+  100%{ inset-inline-start:100%; }
 }
 .journey-steps{ display:grid; grid-template-columns: repeat(5,1fr); gap:1.2rem; position:relative; }
 .journey-step{ text-align:center; }
-.journey-dot{
-  width:56px; height:56px; border-radius:50%;
-  background: var(--rich-black); border:1px solid var(--line);
-  display:flex; align-items:center; justify-content:center;
-  margin: 0 auto 1.2rem; font-family:var(--font-serif); color: var(--gold-light);
-  position:relative; z-index:2; transition: border-color .5s ease, transform .5s ease;
+.journey-node{
+  display:inline-flex; align-items:center; gap:.55rem;
+  background: var(--rich-black);
+  border:1px solid var(--line);
+  border-radius: 999px;
+  padding: .5rem 1.1rem .5rem .5rem;
+  margin: 0 auto 1.2rem;
+  position:relative; z-index:2; max-width:100%;
+  animation: journeyNodeFlash 5s ease-out infinite;
+  animation-delay: calc(var(--i, 0) * 1.25s);
 }
-.journey-step.in-view .journey-dot{ border-color: var(--gold-light); transform: scale(1.08); }
-.journey-step h4{ font-size:1rem; margin-bottom:.4em; }
+.journey-node-icon{
+  width:30px; height:30px; border-radius:50%; flex:0 0 auto;
+  display:flex; align-items:center; justify-content:center;
+  background: var(--charcoal); color: var(--gold-light);
+  animation: journeyIconFlash 5s ease-out infinite;
+  animation-delay: calc(var(--i, 0) * 1.25s);
+}
+.journey-node-icon svg{ width:16px; height:16px; }
+.journey-node-label{
+  font-family:var(--font-serif); font-size:.9rem; color: var(--cream);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+@keyframes journeyNodeFlash{
+  0%{ border-color: var(--gold-bright); box-shadow: 0 0 0 4px rgba(200,159,98,.22), 0 0 18px rgba(200,159,98,.55); }
+  18%, 100%{ border-color: var(--line); box-shadow:none; }
+}
+@keyframes journeyIconFlash{
+  0%{ background: var(--gold-light); color: var(--rich-black); box-shadow: 0 0 14px rgba(200,159,98,.85); }
+  18%, 100%{ background: var(--charcoal); color: var(--gold-light); box-shadow:none; }
+}
 .journey-step p{ font-size:.82rem; }
+@media (prefers-reduced-motion: reduce){
+  .journey-line-run{ animation:none; inset-inline-start:0; width:100%; opacity:.5; }
+  .journey-node, .journey-node-icon{ animation:none; }
+}
 
 /* ==========================================================================
    CTA band
