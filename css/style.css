@@ -248,7 +248,7 @@ section{ position:relative; }
 .brand .wordmark{ font-family: var(--font-serif); font-size:1.9rem; font-weight:700; letter-spacing:.02em; color:var(--cream); line-height:1; }
 .brand .wordmark small{ display:block; font-family:var(--font-sans); font-size:.8rem; letter-spacing:.28em; color:var(--gold-light); font-weight:600; margin-top:.4em; text-transform:uppercase; }
 
-.nav-links{ display:flex; align-items:center; gap: 2.6rem; }
+.nav-links{ display:flex; align-items:center; gap: clamp(1.2rem, 2.2vw, 2.6rem); }
 .nav-links a{
   position:relative;
   font-size:.82rem;
@@ -268,7 +268,7 @@ section{ position:relative; }
 .nav-links a:hover, .nav-links a.active{ color: var(--cream); }
 .nav-links a:hover::after, .nav-links a.active::after{ right:0; }
 
-.nav-cta{ display:flex; align-items:center; gap:1.6rem; }
+.nav-cta{ display:flex; align-items:center; gap: clamp(.9rem, 1.6vw, 1.6rem); }
 
 .lang-toggle{
   display:flex; align-items:center; gap:.4em;
@@ -317,12 +317,13 @@ section{ position:relative; }
   display:flex; flex-direction:column;
   align-items:flex-start; justify-content:center;
   gap: 1.4rem;
-  padding: 0 clamp(24px,8vw,64px);
+  padding: clamp(24px,10vh,64px) clamp(24px,8vw,64px);
+  overflow-y:auto;
   transform: translateY(-100%);
   transition: transform .6s var(--ease);
 }
 .mobile-menu.is-open{ transform: translateY(0); }
-.mobile-menu a{ font-family:var(--font-serif); font-size: 2.4rem; color:var(--cream); }
+.mobile-menu a{ font-family:var(--font-serif); font-size: clamp(1.6rem, 6vw, 2.4rem); color:var(--cream); }
 .mobile-menu a:hover{ color: var(--gold-light); }
 .mobile-menu .mm-foot{ margin-top:2.4rem; color:rgba(237,235,234,.5); font-size:.85rem; }
 
@@ -411,9 +412,15 @@ section{ position:relative; }
    ========================================================================== */
 
 .grid{ display:grid; gap: clamp(20px,2.4vw,32px); }
+.grid > *{ min-width:0; }
 .grid-3{ grid-template-columns: repeat(3,1fr); }
 .grid-2{ grid-template-columns:  60% 40%; }
 .grid-4{ grid-template-columns: repeat(4,1fr); }
+
+/* Utility for split rows that want a wider desktop gap than the default
+   .grid gap (e.g. text/image 60·40 splits) — scales down smoothly on
+   narrower screens instead of holding a fixed gap after the columns stack. */
+.split-gap{ gap: clamp(24px, 6vw, 64px); }
 
 .glass{
   background: linear-gradient(160deg, rgba(237,235,234,.05), rgba(237,235,234,.015));
@@ -645,7 +652,7 @@ section{ position:relative; }
 
 .cat-slider-head{
   display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.6rem; flex-wrap:wrap; row-gap:.4rem;
 }
 .cat-slider-head h3{ margin:0; }
 .cat-slider-head .count{
@@ -729,6 +736,14 @@ section{ position:relative; }
 .lightbox-close{ top:32px; right:32px; }
 .lightbox-prev{ left:32px; top:50%; transform:translateY(-50%); }
 .lightbox-next{ right:32px; top:50%; transform:translateY(-50%); }
+@media (max-width: 600px){
+  .lightbox{ padding:14px; }
+  .lightbox-close, .lightbox-prev, .lightbox-next{ width:40px; height:40px; }
+  .lightbox-close{ top:10px; right:10px; }
+  .lightbox-prev{ left:4px; }
+  .lightbox-next{ right:4px; }
+  .lightbox img{ max-height:60vh; }
+}
 
 /* ==========================================================================
    Why choose / feature list
@@ -766,7 +781,7 @@ section{ position:relative; }
   100%{ inset-inline-start:100%; }
 }
 .journey-steps{ display:grid; grid-template-columns: repeat(5,1fr); gap:1.2rem; position:relative; }
-.journey-step{ text-align:center; }
+.journey-step{ text-align:center; min-width:0; }
 .journey-node{
   display:inline-flex; align-items:center; gap:.55rem;
   background: var(--rich-black);
@@ -774,7 +789,7 @@ section{ position:relative; }
   border-radius: 999px;
   padding: .5rem 1.1rem .5rem .5rem;
   margin: 0 auto 1.2rem;
-  position:relative; z-index:2; max-width:100%;
+  position:relative; z-index:2; max-width:100%; box-sizing:border-box;
   animation: journeyNodeFlash 5s ease-out infinite;
   animation-delay: calc(var(--i, 0) * 1.25s);
 }
@@ -799,6 +814,9 @@ section{ position:relative; }
   18%, 100%{ background: var(--charcoal); color: var(--gold-light); box-shadow:none; }
 }
 .journey-step p{ font-size:.82rem; }
+@media (max-width: 760px){
+  .journey-node-label{ white-space:normal; text-align:start; }
+}
 @media (prefers-reduced-motion: reduce){
   .journey-line-run{ animation:none; inset-inline-start:0; width:100%; opacity:.5; }
   .journey-node, .journey-node-icon{ animation:none; }
@@ -865,6 +883,16 @@ section{ position:relative; }
 .social-row a.ic-linkedin:hover{ border-color:#0A66C2; background:rgba(10,102,194,.14); box-shadow:0 0 22px 3px rgba(10,102,194,.5); }
 .social-row a.ic-instagram:hover{ border-color:#dc2743; background:rgba(220,39,67,.14); box-shadow:0 0 22px 3px rgba(220,39,67,.5); }
 .social-row a.ic-x:hover{ border-color:rgba(237,235,234,.65); background:rgba(237,235,234,.1); box-shadow:0 0 22px 3px rgba(237,235,234,.4); }
+
+/* ==========================================================================
+   Tables (SLA turnaround table, services page)
+   ========================================================================== */
+
+.table-scroll{ width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+@media (max-width: 600px){
+  .sla-table th, .sla-table td{ padding:.85rem 1rem !important; }
+  .sla-table{ font-size:.85rem; }
+}
 
 /* ==========================================================================
    Footer
@@ -971,7 +999,10 @@ section{ position:relative; }
 .viewer-switcher button.is-active{ background: var(--grad-gold); color:#17150f; border-color:transparent; }
 
 @media (max-width: 640px){
-  .viewer-controls{ top:auto; bottom:1.1rem; right:1.1rem; }
+  /* Controls stay top-right (clear of the badge, which is top-left) so
+     they never fight the model switcher for the same bottom strip. */
+  .viewer-controls{ gap:.4rem; }
+  .viewer-btn{ padding:.5em .85em; font-size:.6rem; }
   .viewer-hint{ display:none; }
   .viewer-switcher{ bottom:.8rem; }
 }
@@ -1158,8 +1189,18 @@ html[dir="rtl"]{ direction: rtl; }
    Responsive
    ========================================================================== */
 
+/* Nav collapses to the hamburger well before the full nav row (logo + 5
+   links + upload button + lang toggle) would actually run out of room —
+   giving tablets and small laptop windows a comfortable buffer instead of
+   crowding/wrapping right up against the desktop layout's edge. */
+@media (max-width: 1200px){
+  .nav-links, .nav-cta .btn-ghost{ display:none; }
+  .nav-toggle{ display:block; }
+}
+
 @media (max-width: 1080px){
   .grid-4{ grid-template-columns: repeat(2,1fr); }
+  .grid-3{ grid-template-columns: repeat(2,1fr); }
   .process{ grid-template-columns: repeat(2,1fr); }
   .journey-steps{ grid-template-columns: repeat(2,1fr); }
   .journey-line{ display:none; }
@@ -1168,8 +1209,6 @@ html[dir="rtl"]{ direction: rtl; }
 }
 
 @media (max-width: 860px){
-  .nav-links, .nav-cta .btn-ghost{ display:none; }
-  .nav-toggle{ display:block; }
   .grid-3{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
   .masonry{ columns: 2 200px; }
@@ -1180,6 +1219,11 @@ html[dir="rtl"]{ direction: rtl; }
 
 @media (max-width: 600px){
   .brand .icon{ width:40px; }
+}
+
+@media (max-width: 420px){
+  .brand .wordmark{ font-size:1.5rem; }
+  .brand .wordmark small{ font-size:.66rem; letter-spacing:.18em; }
 }
 
 @media (max-width: 600px){
