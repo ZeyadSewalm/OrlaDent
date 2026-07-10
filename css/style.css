@@ -1210,6 +1210,10 @@ html[dir="rtl"]{ direction: rtl; }
   .grid-4{ grid-template-columns: repeat(2,1fr); }
   .grid-3{ grid-template-columns: repeat(2,1fr); }
   .process{ grid-template-columns: repeat(2,1fr); }
+  /* The connector arrow between steps only makes sense in a single row —
+     once the grid wraps to 2 columns, an arrow on the 2nd/4th step would
+     point off the grid into empty space instead of at the next step. */
+  .process-step .arrow{ display:none; }
   .journey-steps{ grid-template-columns: repeat(2,1fr); }
   .journey-line{ display:none; }
   .footer-top{ grid-template-columns: 1fr 1fr; }
