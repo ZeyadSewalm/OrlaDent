@@ -385,6 +385,14 @@ section{ position:relative; }
   display:flex; flex-direction:column; align-items:center; gap:.8em;
   color: rgba(237,235,234,.55); font-size:.68rem; letter-spacing:.25em; text-transform:uppercase;
 }
+/* This is a fixed-position decorative hint anchored to the bottom of the
+   hero, independent of the hero's own content flow — on narrow screens the
+   stacked kicker/heading/actions/stats can grow tall enough to reach the
+   same corner and collide with it. Simplest, safest fix: touch users don't
+   need a "scroll" hint anyway, so it just steps aside below tablet width. */
+@media (max-width: 900px){
+  .hero-scroll{ display:none; }
+}
 .hero-scroll .track{ width:1px; height:52px; background: rgba(237,235,234,.2); position:relative; overflow:hidden; }
 .hero-scroll .track::after{
   content:''; position:absolute; left:0; top:-100%; width:100%; height:100%;
