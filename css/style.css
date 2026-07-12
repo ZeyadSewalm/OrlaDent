@@ -362,20 +362,14 @@ section{ position:relative; }
 
 .hero{
   position:relative;
-  /* Plain vh is the one viewport-relative unit on the whole site (every
-     other section sizes off its own content/padding instead) — and it's
-     exactly the kind of value mobile browsers compute inconsistently:
-     address-bar show/hide animations, and especially "Desktop site" mode
-     (which can report a viewport height taller than what's actually
-     visible), can inflate it well past one real screen height, stretching
-     the hero and its background video/image with it. svh ("small viewport
-     height") is the modern, stable alternative — falls back silently to
-     vh on browsers that don't support it — and the max-height is a hard
-     ceiling so no viewport-height quirk in any mode can blow the hero out
-     past a sane size. */
-  min-height: 100vh;
-  min-height: 100svh;
-  display:flex; align-items:flex-end;
+  /* Sized purely by its own content/padding — same approach as .page-hero
+     on the interior pages. We used to size this off 100vh/100svh, but any
+     viewport-height unit is computed inconsistently across mobile browsers
+     (address-bar show/hide, and especially "Desktop site" mode, can report
+     a viewport height taller than what's actually visible), which stretched
+     the hero and its background video with it. Dropping vh entirely removes
+     that whole class of bug — the hero band is now exactly as tall as its
+     content, on every page, every device, every browser mode. */
   overflow:hidden;
   background: var(--black);
 }
@@ -1294,3 +1288,4 @@ html[dir="rtl"]{ direction: rtl; }
   .footer-top{ grid-template-columns: 1fr; }
   .hero-stats{ flex-wrap:wrap; row-gap:1.6rem; }
 }
+                                                                                                                                                                                                                                                                               
