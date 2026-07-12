@@ -373,9 +373,9 @@ section{ position:relative; }
      vh on browsers that don't support it — and the max-height is a hard
      ceiling so no viewport-height quirk in any mode can blow the hero out
      past a sane size. */
-  min-height: 100vh;
   min-height: 100svh;
-  max-height: 980px;
+  min-height: 100svh;
+  max-height: 900px;
   display:flex; align-items:flex-end;
   overflow:hidden;
   background: var(--black);
