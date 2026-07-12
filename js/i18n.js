@@ -579,7 +579,10 @@
       if(dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
     });
 
-    document.querySelectorAll(".lang-toggle .lang-opt").forEach(function(opt){
+    document.querySelectorAll(".lang-select-current").forEach(function(el){
+      el.textContent = lang.toUpperCase();
+    });
+    document.querySelectorAll(".lang-select-opt").forEach(function(opt){
       opt.classList.toggle("is-active", opt.getAttribute("data-lang") === lang);
     });
 
@@ -594,13 +597,42 @@
     document.dispatchEvent(new CustomEvent("i18n:change", { detail: { lang: lang } }));
   }
 
+  function closeAllLangSelects(except){
+    document.querySelectorAll(".lang-select.is-open").forEach(function(el){
+      if(el === except) return;
+      el.classList.remove("is-open");
+      var btn = el.querySelector(".lang-select-btn");
+      if(btn) btn.setAttribute("aria-expanded", "false");
+    });
+  }
+
   function init(){
     applyLang(getLang());
-    document.querySelectorAll(".lang-toggle").forEach(function(btn){
-      btn.addEventListener("click", function(){
-        var next = getLang() === "en" ? "ar" : "en";
-        applyLang(next);
+
+    document.querySelectorAll(".lang-select").forEach(function(wrap){
+      var btn = wrap.querySelector(".lang-select-btn");
+      if(btn){
+        btn.addEventListener("click", function(e){
+          e.stopPropagation();
+          var isOpen = wrap.classList.contains("is-open");
+          closeAllLangSelects();
+          wrap.classList.toggle("is-open", !isOpen);
+          btn.setAttribute("aria-expanded", String(!isOpen));
+        });
+      }
+      wrap.querySelectorAll(".lang-select-opt").forEach(function(opt){
+        opt.addEventListener("click", function(e){
+          e.stopPropagation();
+          applyLang(opt.getAttribute("data-lang"));
+          closeAllLangSelects();
+        });
       });
+    });
+
+    // Close on outside click / Escape so the menu never gets stuck open.
+    document.addEventListener("click", function(){ closeAllLangSelects(); });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") closeAllLangSelects();
     });
   }
 

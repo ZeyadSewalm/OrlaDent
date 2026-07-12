@@ -270,25 +270,54 @@ section{ position:relative; }
 
 .nav-cta{ display:flex; align-items:center; gap: clamp(.9rem, 1.6vw, 1.6rem); }
 
-.lang-toggle{
-  display:flex; align-items:center; gap:.4em;
+.lang-select{ position:relative; flex-shrink:0; }
+.lang-select-btn{
+  display:flex; align-items:center; gap:.6em;
   background:none;
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:.5em 1em;
+  border-radius:24px;
+  padding:.7em 1.3em;
   font-family: var(--font-sans);
-  font-size:.72rem;
+  font-size:.86rem;
   font-weight:700;
   letter-spacing:.08em;
   color: rgba(237,235,234,.6);
   cursor:pointer;
   transition: border-color .35s ease, color .35s ease;
-  flex-shrink:0;
 }
-.lang-toggle:hover{ border-color: var(--gold-light); }
-.lang-toggle .lang-sep{ color: var(--line); }
-.lang-toggle .lang-opt{ transition: color .35s ease; }
-.lang-toggle .lang-opt.is-active{ color: var(--gold-light); }
+.lang-select-btn:hover{ border-color: var(--gold-light); color: var(--gold-light); }
+.lang-select.is-open .lang-select-btn{ border-color: var(--gold-light); color: var(--gold-light); }
+.lang-select-arrow{ width:13px; height:13px; flex-shrink:0; transition: transform .3s var(--ease); }
+.lang-select.is-open .lang-select-arrow{ transform: rotate(180deg); }
+
+.lang-select-menu{
+  position:absolute; top: calc(100% + 10px); right:0; z-index:30;
+  min-width: 116px;
+  margin:0; padding:.5rem;
+  list-style:none;
+  background: var(--rich-black);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow: 0 20px 44px -18px rgba(0,0,0,.65);
+  opacity:0; visibility:hidden; transform: translateY(-8px);
+  transition: opacity .25s ease, transform .3s var(--ease), visibility .25s;
+}
+.lang-select.is-open .lang-select-menu{ opacity:1; visibility:visible; transform:translateY(0); }
+.lang-select-opt{
+  padding:.75em 1em;
+  border-radius:8px;
+  font-family: var(--font-sans);
+  font-size:.86rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  color: rgba(237,235,234,.6);
+  cursor:pointer;
+  transition: background .25s ease, color .25s ease;
+}
+.lang-select-opt:hover{ background: rgba(195,160,25,.1); color: var(--cream); }
+.lang-select-opt.is-active{ color: var(--gold-light); background: rgba(195,160,25,.12); }
+
+[dir="rtl"] .lang-select-menu{ right:auto; left:0; }
 
 .nav-toggle{
   display:none;
@@ -403,7 +432,13 @@ section{ position:relative; }
 
 .hero-stats{
   position:relative; z-index:2;
-  display:flex; align-items:baseline; gap: clamp(32px,6.5vw,92px);
+  /* flex-start (not baseline) on purpose: the four numbers don't share the
+     same inline content (some have an appended "min" suffix, others just a
+     +/% accent), so baseline alignment lets each item's text-baseline drift
+     independently and the row reads as uneven. Aligning every stat's top
+     edge instead keeps all four big numbers pinned to one shared line, and
+     the labels beneath them line up on their own shared line too. */
+  display:flex; align-items:flex-start; gap: clamp(32px,6.5vw,92px);
   margin-top: clamp(40px,6vw,64px);
   padding-top: clamp(28px,4vw,40px);
   border-top: 1px solid rgba(237,235,234,.14);
@@ -744,14 +779,14 @@ section{ position:relative; }
 .lightbox-close{ top:32px; right:32px; }
 .lightbox-prev{ left:32px; top:50%; transform:translateY(-50%); }
 .lightbox-next{ right:32px; top:50%; transform:translateY(-50%); }
-@media (max-width: 600px){
+/* @media (max-width: 600px){
   .lightbox{ padding:14px; }
   .lightbox-close, .lightbox-prev, .lightbox-next{ width:40px; height:40px; }
   .lightbox-close{ top:10px; right:10px; }
   .lightbox-prev{ left:4px; }
   .lightbox-next{ right:4px; }
   .lightbox img{ max-height:60vh; }
-}
+} */
 
 /* ==========================================================================
    Why choose / feature list
