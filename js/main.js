@@ -35,6 +35,7 @@
       toggle.classList.toggle("is-open");
       mobileMenu.classList.toggle("is-open");
       document.body.classList.toggle("lock-scroll");
+      toggle.setAttribute("aria-expanded", String(toggle.classList.contains("is-open")));
     });
     mobileMenu.querySelectorAll("a").forEach(function(a){
       a.addEventListener("click", function(){

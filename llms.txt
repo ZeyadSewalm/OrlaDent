@@ -1,0 +1,26 @@
+# OrlaDent
+
+> OrlaDent is a premium digital dental CAD/CAM design house ("Exactness, Earned") delivering precision crown, bridge, implant and full-arch design for dental labs and clinics — in hours, not days. Based in Egypt, serving clients worldwide, established 2025.
+
+Key facts:
+- Express single-crown design turnaround: 30–45 minutes
+- 12+ case types supported; 5000+ cases handled; 100% quality-checked against published, case-type-specific SLAs
+- Named-designer model: each client works with a real, named designer — no ticket queues
+- First case designed free, no contract required
+- Bilingual site: English and Arabic (RTL)
+
+## Services
+- [Crown Design](https://orladent.com/services.html#crown): single-unit crowns, inlays, onlays and veneers
+- [Bridge Design](https://orladent.com/services.html#bridge): multi-unit fixed bridges
+- [Implant Design](https://orladent.com/services.html#implant): implant crowns and custom abutments
+- [Full Arch Design](https://orladent.com/services.html#fullarch): All-on-4/6/X frameworks, complete and partial dentures
+- [Esthetic Design](https://orladent.com/services.html#esthetic): veneers and digital smile design (DSD)
+- [Surgical Guides & Appliances](https://orladent.com/services.html#guides): CBCT-planned guides, night guards, splints, retainers
+- [I-Bar Design](https://orladent.com/services.html#ibar): milled implant bar substructures
+
+## Pages
+- [Home](https://orladent.com/): overview, live 3D STL case viewer, client journey
+- [Services](https://orladent.com/services.html): all seven disciplines with SLAs
+- [Projects](https://orladent.com/projects.html): case portfolio by category
+- [About](https://orladent.com/about.html): story, philosophy, the Three Laws
+- [Contact](https://orladent.com/contact.html): upload STL / send a case — info@orladent.com

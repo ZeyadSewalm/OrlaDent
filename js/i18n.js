@@ -583,7 +583,9 @@
       el.textContent = lang.toUpperCase();
     });
     document.querySelectorAll(".lang-select-opt").forEach(function(opt){
-      opt.classList.toggle("is-active", opt.getAttribute("data-lang") === lang);
+      var isActive = opt.getAttribute("data-lang") === lang;
+      opt.classList.toggle("is-active", isActive);
+      opt.setAttribute("aria-selected", String(isActive));
     });
 
     document.documentElement.setAttribute("lang", lang);
