@@ -25,10 +25,10 @@
      no other code changes needed. The first entry is the default/primary
      model shown on load. */
   var MODELS = [
-    { label: "All-on-5 Full Arch, Exocad", file: "assets/models/all-on-5.stl" },
-    { label: "Case 3-3 Design, Exocad", file: "assets/models/case-3-3.stl" },
-    { label: "Complete Denture, Exocad", file: "assets/models/complete-denture.stl" },
-    { label: "Veneer Case, Exocad", file: "assets/models/veneer.stl" }
+    { label: "All-on-5 Full Arch, Exocad", file: "assets/models/all-on-5.stl?v=2" },
+    { label: "Case 3-3 Design, Exocad", file: "assets/models/case-3-3.stl?v=2" },
+    { label: "Complete Denture, Exocad", file: "assets/models/complete-denture.stl?v=2" },
+    { label: "Veneer Case, Exocad", file: "assets/models/veneer.stl?v=2" }
   ];
 
   var loadingEl = document.getElementById("stl-loading");
